@@ -1,19 +1,23 @@
 import React, { Component } from 'react'
 import { observer, inject, Provider } from 'mobx-react'
 import './styles/index.scss'
-import viewStore from './viewStore'
+import { BrowserRouter, Route } from 'react-router-dom';
+import Header from './components/Header'
 
-
-@observer
 export default class App extends Component {
 
 
-
-  
-
   render() {
-    return(
-      <h1>Novagency.io</h1>
+    return (
+      <Provider>
+        
+        <BrowserRouter>
+          <Header />
+          <Route exact path='/' render={(props) =><div style={{height : 'calc(100% - 160px)'}}><h1 className="center-XY">novagency.io | About</h1></div> } />
+          <Route exact path='/projects' render={(props) => <div style={{height : 'calc(100% - 160px)'}}><h1 className="center-XY">novagency.io | Projects</h1></div>} />
+          <Route exact path='/contact' render={(props) => <div style={{height : 'calc(100% - 160px)'}}><h1 className="center-XY">novagency.io | Contact</h1></div>} />
+        </BrowserRouter>
+      </Provider>
     )
   }
 }

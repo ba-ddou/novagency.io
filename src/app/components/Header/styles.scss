@@ -1,0 +1,31 @@
+@import 'styles/index';
+
+#header {
+    height : 160px;
+    #banner{
+        position: relative;
+        height: 100px;
+        #banner-logotype{
+            float: left;
+        }
+        #banner-slogan{
+            font-family: GeomanistBlack;
+        }
+        #banner-badge{
+            float: right;
+        }
+    }
+    #navbar{
+        position: relative;
+        height: 60px;
+        #navbar-inner{
+
+            .navbar-navlink{
+            margin : 5px;
+            }
+            .navbar-navlink-selected{
+            font-weight: bolder;
+            }
+        }
+    }
+}

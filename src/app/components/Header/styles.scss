@@ -1,16 +1,15 @@
 @import 'styles/index';
 
 #header {
-    height : 160px;
+    height : 120px;
     #banner{
         position: relative;
-        height: 100px;
+        height: 80px;
         #banner-logotype{
             float: left;
         }
         #banner-slogan{
             font-family: GeomanistBlack;
-            font-size: 30px;
         }
         #banner-badge{
             float: right;

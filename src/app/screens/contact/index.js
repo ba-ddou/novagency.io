@@ -8,7 +8,7 @@
 
 import React from 'react';
 import './styles.scss'
-import Form from './components/Form'
+import ContactForm from './components/ContactForm'
 
 const Contact = () => {
     return (
@@ -20,7 +20,7 @@ const Contact = () => {
                     <span className="contactPage-copy-grey">project.</span>
                 </span>
             </div >
-            <Form className="mainContent-page-splitScreen" />
+            <ContactForm className="mainContent-page-splitScreen" />
         </div >
     );
 }

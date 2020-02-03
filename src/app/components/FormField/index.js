@@ -9,7 +9,6 @@ const FormField = ({textarea,validate,...props}) => {
     var inputClassNames;
     if (meta.touched && meta.error) inputClassNames = "genericInput-error";
     else if (meta.touched && !meta.error && validate) inputClassNames = "genericInput-validate";
-
     return (
         <div className="genericInputContainer">
             {!textarea ? <input

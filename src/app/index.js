@@ -5,12 +5,15 @@ import { BrowserRouter, Route } from 'react-router-dom';
 import Header from 'app/components/Header'
 import Footer from 'app/components/Footer'
 import Contact from 'app/screens/contact'
+import services from 'app/lib/services'
+
+
 export default class App extends Component {
 
 
   render() {
     return (
-      <Provider>
+      <Provider services={services}>
 
         <BrowserRouter>
           <Header />

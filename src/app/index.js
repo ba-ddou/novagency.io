@@ -6,7 +6,7 @@ import Header from 'app/components/Header'
 import Footer from 'app/components/Footer'
 import Contact from 'app/screens/contact'
 import services from 'app/lib/services'
-
+import Projects from 'app/screens/projects'
 
 export default class App extends Component {
 
@@ -17,11 +17,9 @@ export default class App extends Component {
 
         <BrowserRouter>
           <Header />
-          <div id="mainContent">
-            <Route exact path='/' render={(props) => <div><h1 className="center-XY">novagency.io | About</h1></div>} />
-            <Route exact path='/projects' render={(props) => <div><h1 className="center-XY">novagency.io | Projects</h1></div>} />
+            <Route exact path='/' render={(props) => <div className="mainContent-page"><h1 className="center-XY">novagency.io | About</h1></div>} />
+            <Route path='/projects' render={(props) => <Projects />} />
             <Route exact path='/contact' render={(props) => <Contact />} />
-          </div>
         </BrowserRouter>
         <Footer />
       </Provider>

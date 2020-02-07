@@ -1,6 +1,6 @@
 
 .mainContent-page{
-    height: calc(100% - 200px);
+    min-height: calc(100% - 200px);
     .mainContent-page-splitScreen{
     display: inline-block;
     float: left;

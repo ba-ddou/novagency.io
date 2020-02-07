@@ -1,0 +1,22 @@
+@import 'styles/index.scss';
+
+#carouselControls{
+    height: 105px;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    right : 0;
+
+    #carouselControls-left,#carouselControls-right{
+        display: inline-block;
+        background-color: white;
+        height: 100%;
+        width: 30vw;
+    }
+    #carouselControls-left{
+        float: left;
+    }
+    #carouselControls-right{
+        float: right;
+    }
+}

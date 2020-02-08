@@ -12,14 +12,17 @@ import { BrowserRouter, Route, useParams, useRouteMatch } from 'react-router-dom
 import ProjectsCarousel from './components/ProjectsCarousel'
 
 const Projects = () => {
-    let { path, url } = useRouteMatch();
+    // get the current Route's path
+    let { path} = useRouteMatch();
     return (
         <div id="projectsPage" className="mainContent-page">
             <BrowserRouter>
+                {/* Render the Projects carousel when the path matches the current route */}
                 <Route exact path={path} >
                     <ProjectsCarousel />
                 </Route>
-                <Route path={`${url}/:projectName`} >
+                {/* Render a specific Project page */}
+                <Route path={`${path}/:projectName`} >
                     <Project />
                 </Route>
             </BrowserRouter>

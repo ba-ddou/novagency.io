@@ -1,8 +1,14 @@
-
+/*
+*
+* Carousel Floating Controls
+* Sits on top of the ProjectsCarousel and calls the next and previous handlers on user click
+*
+*/
 
 
 import React from 'react';
 import './styles.scss'
+// Import the Arrow Spinning Button from the SpinningBtn package
 import { ArrowSpinningBtn } from 'app/components/SpinningBtn';
 
 const CarouselControls = () => {

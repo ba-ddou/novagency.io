@@ -1,9 +1,11 @@
 /*
 *
-*
+* ProjectCarousel
 *
 *
 */
+
+
 import React, { Component } from 'react';
 import Slider from 'react-slick'
 import "slick-carousel/slick/slick.css";
@@ -13,6 +15,7 @@ import CarouselControls from '../CarouselControls'
 import ProjectSlide from '../ProjectSlide'
 export default class ProjectsCarousel extends Component {
 
+    // Slick Slider Settings
     settings = {
         className: "slider variable-width",
         infinite: true,
@@ -29,7 +32,7 @@ export default class ProjectsCarousel extends Component {
 
                     <Slider {...this.settings}>
                         {[1, 2, 3, 4, 5, 6].map((data,index) => (
-                            <ProjectSlide index={index} />
+                            <ProjectSlide key={index} index={index} />
                         ))}
                     </Slider>
                     <CarouselControls />

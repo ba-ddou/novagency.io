@@ -14,7 +14,6 @@ export default class App extends Component {
   render() {
     return (
       <Provider services={services}>
-
         <BrowserRouter>
           <Header />
           <div id="mainContent">

@@ -12,11 +12,15 @@
         background-color: white;
         height: 100%;
         width: 30vw;
+        padding: 10px;
     }
     #carouselControls-left{
         float: left;
     }
     #carouselControls-right{
         float: right;
+        >div{
+            float: right;
+        }
     }
 }

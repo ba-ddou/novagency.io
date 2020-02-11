@@ -13,6 +13,9 @@ import "slick-carousel/slick/slick-theme.css";
 import './styles.scss';
 import CarouselControls from '../CarouselControls'
 import ProjectSlide from '../ProjectSlide'
+import {inject} from 'mobx-react'
+
+@inject('modelStore')
 export default class ProjectsCarousel extends Component {
 
     // Slick Slider Settings
@@ -31,8 +34,8 @@ export default class ProjectsCarousel extends Component {
             <div id="projectsCarousel">
 
                     <Slider {...this.settings}>
-                        {[1, 2, 3, 4, 5, 6].map((data,index) => (
-                            <ProjectSlide key={index} index={index} />
+                        {this.props.modelStore.projects.map((data,index) => (
+                            <ProjectSlide key={index} data={data} />
                         ))}
                     </Slider>
                     <CarouselControls />

@@ -7,13 +7,19 @@
 
 import React from 'react';
 import './styles.scss'
+import {toJS} from 'mobx'
+import thumb from 'app/assets/images/xdesign.jpg'
 
-const ProjectSlide = ({index}) => {
+// {JSON.stringify(toJS(data))}
+
+const ProjectSlide = ({data}) => {
     return (
-        <div key={index} className="projectSlide">
-            <div className="projectSlide-thumbnail">{index}</div>
+        <div key={data.title} className="projectSlide">
+            <div className="projectSlide-thumbnail">
+                <img src={thumb} />
+            </div>
             <div className="projectSlide-info">
-                `Info of Project #${index}`
+                {data.title}
             </div>
         </div>
     );

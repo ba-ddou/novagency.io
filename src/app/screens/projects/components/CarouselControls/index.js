@@ -12,14 +12,14 @@ import './styles.scss'
 import { ArrowSpinningBtn , SvgSpinningBtn } from 'app/components/SpinningBtn';
 import img from 'app/assets/images/xdesign.jpg';
 
-const CarouselControls = () => {
+const CarouselControls = ({next,prev}) => {
     return (
         <div id="carouselControls">
-            <div id="carouselControls-left">
+            <div id="carouselControls-left" onClick={prev}>
                 {/* <ArrowSpinningBtn direction="back" /> */}
                 <SvgSpinningBtn src={img} />
             </div>
-            <div id="carouselControls-right">
+            <div id="carouselControls-right" onClick={next}>
                 {/* <ArrowSpinningBtn direction="forward" /> */}
                 <SvgSpinningBtn src={img} />
             </div>

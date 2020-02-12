@@ -30,16 +30,24 @@ export default class ProjectsCarousel extends Component {
         draggable : false
     };
 
+    next = ()=>{
+        this.slider.slickNext();
+    }
+
+    prev = ()=>{
+        this.slider.slickPrev();
+    }
+
     render() {
         return (
             <div id="projectsCarousel">
 
-                    <Slider {...this.settings}>
+                    <Slider {...this.settings} ref={element=>this.slider=element}>
                         {this.props.modelStore.projects.map((data,index) => (
                             <ProjectSlide key={index} data={data} />
                         ))}
                     </Slider>
-                    <CarouselControls />
+                    <CarouselControls next={this.next}  prev={this.prev} />
 
                 
             </div>

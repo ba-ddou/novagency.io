@@ -39,10 +39,19 @@ const SpinWrapper = (props) => {
                 animate={controls}
                 // onHoverStart={}
                 // onHoverEnd={}
-            />
+            >
             {props.children}
+            </motion.div>
         </div>
     );
+}
+
+export const SvgSpinningBtn = ({src})=>{
+    return (
+        <SpinWrapper>
+            <img src={src} />
+        </SpinWrapper>
+    )
 }
 
 

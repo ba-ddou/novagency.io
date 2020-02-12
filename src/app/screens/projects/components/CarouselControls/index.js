@@ -9,16 +9,19 @@
 import React from 'react';
 import './styles.scss'
 // Import the Arrow Spinning Button from the SpinningBtn package
-import { ArrowSpinningBtn } from 'app/components/SpinningBtn';
+import { ArrowSpinningBtn , SvgSpinningBtn } from 'app/components/SpinningBtn';
+import img from 'app/assets/images/xdesign.jpg';
 
 const CarouselControls = () => {
     return (
         <div id="carouselControls">
             <div id="carouselControls-left">
-                <ArrowSpinningBtn direction="back" />
+                {/* <ArrowSpinningBtn direction="back" /> */}
+                <SvgSpinningBtn src={img} />
             </div>
             <div id="carouselControls-right">
-                <ArrowSpinningBtn direction="forward" />
+                {/* <ArrowSpinningBtn direction="forward" /> */}
+                <SvgSpinningBtn src={img} />
             </div>
 
         </div>

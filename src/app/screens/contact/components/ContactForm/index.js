@@ -16,15 +16,17 @@ import * as Yup from 'yup'
 @inject('services')
 export default class ContactForm extends Component{
     
-
+    // for submit handler
     submit = async (values) => {
         var res = await this.props.services.submitInquiry(values);
         alert(res);
     }
     
+
     render(){
         return (
             <div id="contactForm" className={this.props.className}>
+                {/* Formik HOC */}
                 <Formik
                     initialValues={{
                         fullname: '',
@@ -32,6 +34,7 @@ export default class ContactForm extends Component{
                         company: '',
                         message: ''
                     }}
+                    // Yup validation schema and error messages
                     validationSchema={Yup.object({
                         fullname: Yup.string()
                             .required('Required'),
@@ -55,7 +58,7 @@ export default class ContactForm extends Component{
                             name="email"
                             type="email"
                             placeholder="email"
-                            validate={true}
+                            validate={true}      // this field is highlighted when the input is valid
                         />
                         <FormField
                             name="company"
@@ -64,7 +67,7 @@ export default class ContactForm extends Component{
                         />
                         <FormField
                             name="message"
-                            textarea={true}
+                            textarea={true}     // this prop renders a textarea
                             placeholder="what can we do for you ?"
                         />
                         <button type="submit">Send</button>

@@ -26,7 +26,8 @@ export default class ProjectsCarousel extends Component {
         slidesToShow: 1,
         slidesToScroll: 1,
         variableWidth: true,
-        arrows: false
+        arrows: false,
+        draggable : false
     };
 
     render() {

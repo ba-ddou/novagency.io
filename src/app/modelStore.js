@@ -7,8 +7,9 @@ class modelStore {
     projects = [
         {
             title : "Branding",
+            tagline : "visual Identity and branding",
             description : "visual Identity and branding",
-            services : ["visual Identit","Print","branding"],
+            services : ["visual Identity","Print","branding"],
             thumbnail : {
                     title : "branding",
                     src : "app/assets/images/xdesign.jpg"
@@ -16,7 +17,8 @@ class modelStore {
         },
         {
             title : "Web",
-            description : "Web apps & infrastructures",
+            tagline : "Web apps & web infrastructures",
+            description : "Web apps & web infrastructures",
             services : ["Web apps","Websites","Entreprise software","Rest APIs"],
             thumbnail : {
                     title : "Web",
@@ -25,6 +27,7 @@ class modelStore {
         },
         {
             title : "UI & UX",
+            tagline : "UI & UX Design",
             description : "UI & UX Design",
             services : ["UI","UX"],
             thumbnail : {

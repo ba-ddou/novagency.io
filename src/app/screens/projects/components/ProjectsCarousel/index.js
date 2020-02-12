@@ -41,12 +41,16 @@ export default class ProjectsCarousel extends Component {
     render() {
         return (
             <div id="projectsCarousel">
-
+                    
                     <Slider {...this.settings} ref={element=>this.slider=element}>
+                        {/* the projects data array from the model store
+                            is mapped to projects slides*/}
                         {this.props.modelStore.projects.map((data,index) => (
                             <ProjectSlide key={index} data={data} />
                         ))}
                     </Slider>
+                    {/* this is div that contains the slider next and prev buttons
+                        it's absolutely positionned on top of the slider */}
                     <CarouselControls next={this.next}  prev={this.prev} />
 
                 

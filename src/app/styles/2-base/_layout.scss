@@ -1,12 +1,10 @@
-#mainContent{
-    height: calc(100% - 200px);
-    .mainContent-page{
-        height: 100%;
-        .mainContent-page-splitScreen{
-        display: inline-block;
-        float: left;
-        width: 50%;
-        height: 100%;
-        }
+
+.mainContent-page{
+    min-height: calc(100% - 200px);
+    .mainContent-page-splitScreen{
+    display: inline-block;
+    float: left;
+    width: 50%;
+    height: 100%;
     }
 }

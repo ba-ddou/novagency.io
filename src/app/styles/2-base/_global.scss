@@ -34,12 +34,14 @@ body {
 }
 
 
-.horizontal-center {
+.center-X {
+  position: absolute;
   left: 50%;
   @include transform(translateX(-50%));
 }
 
-.vertical-center {
+.center-Y{
+  position: absolute;
   top: 50%;
   @include transform(translateY(-50%));
 }

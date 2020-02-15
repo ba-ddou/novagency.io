@@ -25,7 +25,12 @@ const SpinWrapper = (props) => {
     );
 }
 
+
+// This is a generic spinning Button Component
+// it takes an image src as an argument 
+// and renders a spinning div that contains the image
 export const SvgSpinningBtn = ({ spin, fix }) => {
+
     return (
         <div className="svgSpinningBtn">
             <SpinWrapper>

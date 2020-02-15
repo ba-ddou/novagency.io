@@ -25,13 +25,14 @@ const SpinWrapper = (props) => {
     );
 }
 
-export const SvgSpinningBtn = ({ spin, fix }) => {
+export const SvgSpinningBtn = ({ spin, fix,text }) => {
     return (
         <div className="svgSpinningBtn">
             <SpinWrapper>
                 <img src={spin} />
             </SpinWrapper>
-            <img src={fix} />
+            {fix && <img src={fix} />}
+            {text && <span className="center-XY">{text}</span>}
         </div>
 
     )

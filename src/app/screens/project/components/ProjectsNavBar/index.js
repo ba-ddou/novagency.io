@@ -9,7 +9,7 @@
 import React from 'react';
 import { inject } from 'mobx-react';
 import { NavLink } from 'react-router-dom';
-
+import './styles.sass'
 
 const ProjectsNavBar = inject('modelStore')(
     (props) => {

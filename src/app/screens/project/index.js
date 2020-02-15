@@ -23,7 +23,7 @@ const Project = inject('modelStore')(
                 <div className="projectPage-info">
                     <div className="projectPage-info-services">
                         {project[0].services.map(
-                            service=><span className="projectPage-info-service" >{service}</span>
+                            (service,index)=><span key={index} className="projectPage-info-service" >{service}</span>
                         )}
                     </div>
                         <div className="projectPage-info-description">{project[0].description}</div>

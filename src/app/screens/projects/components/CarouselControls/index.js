@@ -14,6 +14,7 @@ import { ArrowSpinningBtn , SvgSpinningBtn } from 'app/components/SpinningBtn';
 // importing an image from the assets folder
 // all SVGs should be imported this way
 import img from 'app/assets/images/xdesign.jpg';
+import apple from 'app/assets/images/apple.svg'
 
 const CarouselControls = ({next,prev}) => {
     return (
@@ -21,11 +22,12 @@ const CarouselControls = ({next,prev}) => {
             <div id="carouselControls-left" onClick={prev}>
                 {/* <ArrowSpinningBtn direction="back" /> */}
                 {/* This components render a spinning img from the images source passed to it */}
-                <SvgSpinningBtn src={img} />
+                <SvgSpinningBtn spin={img} fix={apple} />
+
             </div>
             <div id="carouselControls-right" onClick={next}>
                 {/* <ArrowSpinningBtn direction="forward" /> */}
-                <SvgSpinningBtn src={img} />
+                <SvgSpinningBtn spin={img} fix={apple} />
             </div>
 
         </div>

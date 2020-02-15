@@ -15,13 +15,13 @@ import thumb from 'app/assets/images/xdesign.jpg'
 
 const ProjectSlide = ({ data }) => {
     return (
-        <Link to={`/projects/${data.title}`}>
-            <div key={data.title} className="projectSlide">
+        <Link to={`/projects/${data.name}`}>
+            <div key={data.name} className="projectSlide">
                 <div className="projectSlide-thumbnail">
                     <img src={thumb} />
                 </div>
                 <div className="projectSlide-info">
-                    <span className="projectSlide-info-title">{data.title}</span>
+                    <span className="projectSlide-info-name">{data.name}</span>
                     <span className="projectSlide-info-tagline">{data.tagline}</span>
                     <span className="projectSlide-info-services">{data.services.join(',')}</span>
                     

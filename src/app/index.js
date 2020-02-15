@@ -15,7 +15,6 @@ export default class App extends Component {
   render() {
     return (
       <Provider services={services} modelStore={modelStore}>
-
         <BrowserRouter>
           <Header />
             <Route exact path='/' render={(props) => <div className="mainContent-page"><h1 className="center-XY">novagency.io | About</h1></div>} />

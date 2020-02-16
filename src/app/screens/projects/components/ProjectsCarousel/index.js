@@ -13,9 +13,12 @@ import "slick-carousel/slick/slick-theme.css";
 import './styles.scss';
 import CarouselControls from '../CarouselControls'
 import ProjectSlide from '../ProjectSlide'
-import {inject} from 'mobx-react'
+import {inject, observer} from 'mobx-react'
+
+
 
 @inject('modelStore')
+@observer
 export default class ProjectsCarousel extends Component {
 
     // Slick Slider Settings

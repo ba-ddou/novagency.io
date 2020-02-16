@@ -6,7 +6,7 @@
 */
 
 import React from 'react';
-import './styles.scss'
+import './styles.sass'
 import { Link } from 'react-router-dom'
 import { toJS } from 'mobx'
 import thumb from 'app/assets/images/xdesign.jpg'

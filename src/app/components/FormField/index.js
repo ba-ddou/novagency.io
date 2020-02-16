@@ -9,7 +9,7 @@
 
 
 import React, { Component } from "react";
-import "./styles.scss";
+import "./styles.sass";
 import { useField } from 'formik';
 
 const FormField = ({textarea,validate,...props}) => {

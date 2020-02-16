@@ -7,7 +7,7 @@
 
 
 import React from 'react';
-import './styles.scss'
+import './styles.sass'
 import ContactForm from './components/ContactForm'
 
 const Contact = () => {

@@ -7,7 +7,7 @@
 
 
 import React, { Component } from 'react';
-import './styles.scss';
+import './styles.sass';
 import { observer, inject} from 'mobx-react'
 import { Formik, Form} from 'formik';
 import FormField from 'app/components/FormField'

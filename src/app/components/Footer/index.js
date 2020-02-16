@@ -4,7 +4,7 @@
 *
 */
 import React from 'react';
-import './styles.scss'
+import './styles.sass'
 
 const Footer = () => {
     return (

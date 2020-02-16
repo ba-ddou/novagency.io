@@ -81,7 +81,7 @@ class modelStore {
 
     @action getProject (name){
         let projects = toJS(this.projects);
-        return toJS(projects.filter(element=>element.name===name));
+        return toJS(projects.filter(element=>element.name===name))[0];
     }
 
     @computed get projectsNames (){

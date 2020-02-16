@@ -12,7 +12,7 @@ import { useParams } from 'react-router-dom';
 import './styles.sass'
 import { inject } from 'mobx-react';
 import { Link } from 'react-router-dom';
-import { ArrowSpinningBtn, SvgSpinningBtn } from 'app/components/SpinningBtn';
+import { SvgSpinningBtn } from 'app/components/SpinningBtn';
 import img from 'app/assets/images/xdesign.jpg';
 import apple from 'app/assets/images/apple.svg';
 

@@ -23,7 +23,7 @@ const Projects = () => {
                     <ProjectsCarousel />
                 </Route>
                 {/* Render a specific Project page */}
-                <Route path={`${path}/:projectName`} >
+                <Route exact path={`${path}/:projectName`} >
                     <Project />
                 </Route>
             </BrowserRouter>

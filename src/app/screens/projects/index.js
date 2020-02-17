@@ -27,6 +27,7 @@ const Projects = inject('services', 'modelStore')(({ services, modelStore }) => 
         run();
     });
     
+    
     return (
         <div id="projectsPage" className="mainContent-page">
             <BrowserRouter>

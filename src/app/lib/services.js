@@ -15,7 +15,7 @@ export default new class services {
     }
 
     getProjects = async ()=>{
-        await new Promise((resolve, reject) => setTimeout(resolve, 600));
+        await new Promise((resolve, reject) => setTimeout(resolve, 200));
         return projects;
     }
 }

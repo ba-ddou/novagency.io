@@ -8,7 +8,7 @@
 
 import React from 'react';
 import { useParams } from 'react-router-dom';
-import { inject } from 'mobx-react';
+import { inject, observer } from 'mobx-react';
 import { toJS } from 'mobx'
 import ProjectsNavBar from './components/ProjectsNavBar'
 import ProjectControls from './components/ProjectControls'
@@ -18,11 +18,11 @@ import apple from 'app/assets/images/apple.svg';
 import { Link } from 'react-router-dom';
 
 
-const Project = inject('modelStore')(
-    (props) => {
+const Project = inject('modelStore')(observer(
+    ({modelStore}) => {
         let { projectName } = useParams();
-        let project = props.modelStore.getProject(projectName);
-        return (
+        let project = modelStore.getProject(projectName);
+        if(modelStore.projects.length>0) return (
             <div id="projectPage">
                 <ProjectsNavBar />
                 <div className="projectPage-info">
@@ -40,16 +40,17 @@ const Project = inject('modelStore')(
                 </div>
                 <ProjectControls />
                 <div className="projectPage-requestInquiry">
-                        <div className="projectPage-requestInquiry-text">Et si votre projet ?</div>
-                        <Link to="/contact/">
-                            <SvgSpinningBtn spin={img} fix={apple} />
-                        </Link>
-                        
+                    <div className="projectPage-requestInquiry-text">Et si votre projet ?</div>
+                    <Link to="/contact/">
+                        <SvgSpinningBtn spin={img} fix={apple} />
+                    </Link>
+
                 </div>
             </div>
-
         );
+        else return false
     }
+)
 );
 
 export default Project;

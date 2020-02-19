@@ -1,29 +1,33 @@
 @import 'styles/index.sass'
 
-#header 
-    height: 140px
-    #banner
-        position: relative
-        height: 80px
-        #banner-logotype
-            float: left
+.header
+    .banner
+        display: flex
+        align-items: center
+        justify-content: space-between
+        flex-wrap: wrap
         
-        #banner-slogan
-            font-family: GeomanistBlack
+        .banner-logotype
+            @include font-settings(GothamBlack, 2rem)
         
-        #banner-badge
-            float: right
+        .banner-slogan
+            @include font-settings(GeomanistBlack, 1.9rem)
+            order: 3
+            text-align: center
+            width: 100%
         
+        .banner-badge
+            margin-bottom: 2rem
+
     
-    #navbar
-        position: relative
-        height: 60px
-        #navbar-inner
+    .navbar
+        text-align: center
+        margin-top: 3.2rem
+        .navbar-inner
             .navbar-navlink
-            margin: 10px
+                @include font-settings(GeomanistBold, 1.2rem)
+                @include colop(0.33)
+                margin-right: 2rem
             
             .navbar-navlink-selected
-            font-weight: bolder
-            
-        
-    
+                @include colop(1)

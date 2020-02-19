@@ -2,3 +2,11 @@
     -webkit-transform: $property
     -ms-transform: $property
     transform: $property
+
+@mixin colop($opacity)
+    color: rgba(20, 20, 20, $opacity)
+
+@mixin font-settings ($prop1, $prop2)
+    font:
+        family: $prop1
+        size: $prop2

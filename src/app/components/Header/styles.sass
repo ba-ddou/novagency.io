@@ -6,6 +6,8 @@
         align-items: center
         justify-content: space-between
         flex-wrap: wrap
+        @include for-tablet-portrait-up 
+            flex-wrap: nowrap
         
         .banner-logotype
             @include font-settings(GothamBlack, 2rem)
@@ -15,17 +17,22 @@
             order: 3
             text-align: center
             width: 100%
+            @include for-tablet-portrait-up 
+                order: 0
+                text-align: center
+                width: initial
         
         .banner-badge
             margin-bottom: 2rem
-
+            @include for-tablet-portrait-up 
+                margin-bottom: 0
     
     .navbar
         text-align: center
         margin-top: 3.2rem
         .navbar-inner
             .navbar-navlink
-                @include font-settings(GeomanistBold, 1.2rem)
+                @include font-settings(GeomanistBold, 1.5rem)
                 @include colop(0.33)
                 margin-right: 2rem
             

@@ -9,20 +9,23 @@
 import React from 'react';
 import './styles.sass'
 import ContactForm from './components/ContactForm'
+import { inject } from 'mobx-react'
+import copy from './copy'
 
-const Contact = () => {
+const Contact = inject('viewStore')(({ viewStore }) => {
+    let language = viewStore.language;
     return (
         <div id="contactPage" className="mainContent-page">
             <div id="contactPage-copy" className="mainContent-page-splitScreen">
                 <span id="contactPage-copy-tagLine">
-                    Let's talk<br />
-                    about your<br />
-                    <span className="contactPage-copy-grey">project.</span>
+                    {copy.tagLineOne[language]}<br />
+                    {copy.tagLineTwo[language]}<br />
+                    <span className="contactPage-copy-grey">{copy.tagLineThree[language]}</span>
                 </span>
             </div >
             <ContactForm className="mainContent-page-splitScreen" />
         </div >
     );
-}
+})
 
 export default Contact;

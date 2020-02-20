@@ -3,6 +3,7 @@ import { observer, inject, Provider } from 'mobx-react'
 import './styles/index.sass'
 import { BrowserRouter, Route } from 'react-router-dom';
 import modelStore from './modelStore'
+import viewStore from './viewStore'
 import Header from 'app/components/Header'
 import Footer from 'app/components/Footer'
 import Contact from 'app/screens/contact'
@@ -14,7 +15,7 @@ export default class App extends Component {
 
   render() {
     return (
-      <Provider services={services} modelStore={modelStore}>
+      <Provider services={services} modelStore={modelStore} viewStore={viewStore}>
         <BrowserRouter>
           <Header />
             <Route exact path='/' render={(props) => <About />} />

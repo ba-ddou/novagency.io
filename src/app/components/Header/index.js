@@ -4,7 +4,7 @@
 *
 */
 import React from 'react';
-import './styles.scss'
+import './styles.sass'
 import { NavLink } from 'react-router-dom';
 
 const Header = () => {

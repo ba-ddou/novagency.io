@@ -1,0 +1,71 @@
+@import 'styles/index.sass'
+
+
+
+.genericInputContainer 
+    width: 100%
+
+    input,textarea 
+        width: 100%
+        padding-left: 10px
+        background-color: $lightGrey
+        color: $mateBlack
+        border-radius: 10px
+        border: none
+        font-family: GeomanistRegular
+        font-weight: bolder
+        outline: none !important
+        @media screen and (min-width: 480px) 
+            font-size: 9pt
+    
+  
+    input:focus,textarea:focus 
+        border: 1px solid $mateBlack
+  
+    input
+        height: 40px
+  
+    textarea
+        height: 120px
+        resize: none
+  
+    .genericInputInfo 
+        width: 100%
+  
+
+
+.genericTextArea 
+    padding: 10px
+    font-family: GeomanistRegular
+
+
+
+
+
+
+
+.genericInput-error 
+    border: 1px solid $errorColor !important
+
+
+.genericInput-validate 
+    border: 1px solid $successColor !important
+
+.genericInputInfo 
+    // margin-top: 2px
+    height: 20px
+
+    .genericInputInfo-error 
+        font-family: "Futura LT"
+        color: $errorColor
+        font-size: 8pt
+        display: inline
+  
+
+    .genericInputInfo-validate 
+        font-family: "Futura LT"
+        color: $successColor
+        font-size: 10pt
+        display: inline
+  
+

@@ -10,7 +10,7 @@ import React, { Component } from 'react';
 import Slider from 'react-slick'
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import './styles.scss';
+import './styles.sass';
 import CarouselControls from '../CarouselControls'
 import ProjectSlide from '../ProjectSlide'
 import {inject, observer} from 'mobx-react'

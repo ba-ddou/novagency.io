@@ -8,7 +8,7 @@ import Footer from 'app/components/Footer'
 import Contact from 'app/screens/contact'
 import services from 'app/lib/services'
 import Projects from 'app/screens/projects'
-
+import About from 'app/screens/about'
 export default class App extends Component {
 
 
@@ -17,7 +17,7 @@ export default class App extends Component {
       <Provider services={services} modelStore={modelStore}>
         <BrowserRouter>
           <Header />
-            <Route exact path='/' render={(props) => <div className="mainContent-page"><h1 className="center-XY">novagency.io | About</h1></div>} />
+            <Route exact path='/' render={(props) => <About />} />
             <Route path='/projects' render={(props) => <Projects />} />
             <Route exact path='/contact' render={(props) => <Contact />} />
         </BrowserRouter>

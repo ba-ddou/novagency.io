@@ -7,36 +7,37 @@
 
     input,textarea 
         width: 100%
-        padding-left: 10px
-        background-color: $mateBlack
         color: $mateBlack
-        border-radius: 10px
         border: none
-        font-family: GeomanistRegular
+        border-bottom: 
+            width: 0.2rem
+            style: solid 
+            @include colop(0.33)
+        @include font-settings (GeomanistRegular, 1.2rem)
         font-weight: bolder
         outline: none !important
-        @media screen and (min-width: 480px) 
-            font-size: 9pt
     
-  
+
     input:focus,textarea:focus 
-        border: 1px solid $mateBlack
-  
+        border-bottom: 
+            width: 0.2rem
+            style: solid 
+            @include colop(1)
+
     input
-        height: 40px
-  
+        height: 3.2rem
+
     textarea
-        height: 120px
+        height: 10.4rem
         resize: none
-  
+
     .genericInputInfo 
-        width: 100%
-  
+        //width: 100%
+
 
 
 .genericTextArea 
-    padding: 10px
-    font-family: GeomanistRegular
+    @include font-settings (GeomanistRegular, 1.2rem)
 
 
 
@@ -45,27 +46,27 @@
 
 
 .genericInput-error 
-    border: 1px solid $errorColor !important
+    border-bottom: 
+        width: 0.2rem
+        style: solid 
+        color: $errorColor !important
 
 
 .genericInput-validate 
-    border: 1px solid $successColor !important
+    border-bottom: 
+        width: 0.2rem
+        style: solid 
+        color: $successColor!important
 
 .genericInputInfo 
-    // margin-top: 2px
-    height: 20px
+    height: 2.4rem
 
     .genericInputInfo-error 
-        font-family: "Futura LT"
+        @include font-settings (GeomanistRegular, 1rem)
         color: $errorColor
-        font-size: 8pt
-        display: inline
-  
+
 
     .genericInputInfo-validate 
-        font-family: "Futura LT"
+        @include font-settings (GeomanistRegular, 1rem)
         color: $successColor
-        font-size: 10pt
-        display: inline
-  
 

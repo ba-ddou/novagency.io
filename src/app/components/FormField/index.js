@@ -40,9 +40,9 @@ const FormField = ({textarea,validate,...props}) => {
                 />}
             <div className="genericInputInfo">
                 {/* render an error message when the input field has been visited and it contains an error */}
-                {meta.touched && meta.error && <p className="genericInputInfo-error"><i className="icon ion-ios-warning"></i>{" " + meta.error}</p>}
+                {meta.touched && meta.error && <span className="genericInputInfo-error"><i className="icon ion-ios-warning"></i>{" " + meta.error}</span>}
                 {/* render a validation icon when the input field has been visited and it contains no errors, and the validate prop is set to true */}
-                {!meta.error && meta.touched && validate && <p className="genericInputInfo-validate"><i className="icon ion-ios-checkmark-circle-outline"></i></p>}
+                {!meta.error && meta.touched && validate && <span className="genericInputInfo-validate"><i className="icon ion-ios-checkmark-circle-outline"></i></span>}
             </div>
         </div>
 

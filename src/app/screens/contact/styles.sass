@@ -1,16 +1,20 @@
 @import 'styles/index.sass'
 
 #contactPage
+    margin: 3.2rem 0
+    @include for-tablet-portrait-up 
+        display: flex
+        align-items: flex-start
+        margin: 3.2rem 6.4rem
     #contactPage-copy
-        
+        margin-bottom: 5rem
         #contactPage-copy-tagLine
-            font-family: GeomanistBlack
-            font-size: 30px
-            color: $mateBlack
-            display: block
+            @include font-settings (GeomanistBlack, 3rem)
             .contactPage-copy-grey
-                font-family: inherit
-                opacity: .3
+                @include colop(0.33)
+    .mainContent-page-splitScreen
+        @include for-tablet-portrait-up 
+            flex: 100%
             
         
     

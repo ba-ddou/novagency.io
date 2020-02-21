@@ -12,6 +12,8 @@ import { observer, inject} from 'mobx-react'
 import { Formik, Form} from 'formik';
 import FormField from 'app/components/FormField'
 import * as Yup from 'yup'
+import {SvgSpinningBtn} from 'app/components/SpinningBtn'
+import send from 'app/assets/images/getBack.svg'
 
 @inject('services')
 export default class ContactForm extends Component{
@@ -70,7 +72,9 @@ export default class ContactForm extends Component{
                             textarea={true}     // this prop renders a textarea
                             placeholder="what can we do for you ?"
                         />
-                        <button type="submit">Send</button>
+                        <button type="submit">
+                            <SvgSpinningBtn spin={send} text="SEND" />
+                        </button>
                     </Form>
                 </Formik>
     

@@ -4,9 +4,10 @@
 *
 */
 import React from 'react';
+import {inject} from 'mobx-react'
 import './styles.sass'
 
-const Footer = () => {
+const Footer = inject('modelStore')(() => {
     return (
         <div className="footer">
             <div className="footer-social">
@@ -18,6 +19,6 @@ const Footer = () => {
             </div>
         </div>
     );
-}
+})
 
 export default Footer;

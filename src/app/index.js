@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { observer, inject, Provider } from 'mobx-react'
-import './styles/index.scss'
+import './styles/index.sass'
 import { BrowserRouter, Route } from 'react-router-dom';
 import modelStore from './modelStore'
 import viewStore from './viewStore'

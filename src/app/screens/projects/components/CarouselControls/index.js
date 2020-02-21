@@ -7,7 +7,7 @@
 
 
 import React from 'react';
-import './styles.scss'
+import './styles.sass'
 // Import the Arrow Spinning Button from the SpinningBtn package
 import { ArrowSpinningBtn , SvgSpinningBtn } from 'app/components/SpinningBtn';
 

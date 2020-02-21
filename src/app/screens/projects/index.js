@@ -6,8 +6,9 @@
 */
 
 
+
 import React, { useEffect } from 'react';
-import './styles.scss'
+import './styles.sass'
 import { BrowserRouter, Route, useParams, useRouteMatch } from 'react-router-dom';
 import ProjectsCarousel from './components/ProjectsCarousel'
 import Project from 'app/screens/project'

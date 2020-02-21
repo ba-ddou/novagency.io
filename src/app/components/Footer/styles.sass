@@ -1,0 +1,16 @@
+@import 'styles/index.sass'
+.footer
+    display: flex
+    justify-content: space-between
+    .footer-social
+        .footer-logotype
+            @include font-settings(GothamBlack, 2rem)
+    .footer-languages
+        @include font-settings(GeomanistRegular, 1.5rem)
+        @include colop(0.33)
+        .footer-languages-french
+        .footer-languages-english
+            margin-left: 2rem
+        .footer-languages-french-selected
+            @include colop(0.33)
+        .footer-languages-english-selected

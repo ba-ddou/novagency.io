@@ -9,10 +9,10 @@
 import React from 'react';
 import './styles.sass'
 import ContactForm from './components/ContactForm'
-import { inject } from 'mobx-react'
+import { inject, observer } from 'mobx-react'
 import copy from './copy'
 
-const Contact = inject('viewStore')(({ viewStore }) => {
+const Contact = inject('viewStore')(observer(({ viewStore }) => {
     let language = viewStore.language;
     return (
         <div id="contactPage" className="mainContent-page">
@@ -26,6 +26,6 @@ const Contact = inject('viewStore')(({ viewStore }) => {
             <ContactForm className="mainContent-page-splitScreen" />
         </div >
     );
-})
+}))
 
 export default Contact;

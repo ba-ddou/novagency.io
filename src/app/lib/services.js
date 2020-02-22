@@ -6,15 +6,35 @@
 *
 */
 
+// import * as firebase from 'firebase/app'
+// import 'firebase/firestore';
 
 
 export default new class services {
+
+
+
     submitInquiry = async (values) => {
-        await new Promise((resolve, reject) => setTimeout(resolve, 2000));
-        return "inquiry saved successfully" 
+        try {
+            let db = firebase.firestore();
+            let { id, ...error } = await db.collection('inquiries').add(values);
+            if (id) {
+                console.log(id);
+                return `inquiry saved successfully | With id ${id}`
+            }
+            else {
+                console.log(error);
+                return 'there was a problem submiting your inquiry'
+            }
+        } catch (error) {
+            await new Promise((resolve, reject) => setTimeout(resolve, 300));
+            return 'mock inquiry was succefully saved'
+        }
+
+
     }
 
-    getProjects = async ()=>{
+    getProjects = async () => {
         await new Promise((resolve, reject) => setTimeout(resolve, 200));
         return projects;
     }
@@ -31,7 +51,7 @@ const projects = [
             alt: "branding",
             src: "app/assets/images/xdesign.jpg"
         },
-        images : [
+        images: [
             {
                 alt: "branding",
                 src: "app/assets/images/xdesign.jpg"
@@ -55,7 +75,7 @@ const projects = [
             alt: "Web",
             src: "app/assets/images/xdesign.jpg"
         },
-        images : [
+        images: [
             {
                 alt: "branding",
                 src: "app/assets/images/xdesign.jpg"
@@ -79,7 +99,7 @@ const projects = [
             alt: "UI & UX",
             src: "app/assets/images/xdesign.jpg"
         },
-        images : [
+        images: [
             {
                 alt: "branding",
                 src: "app/assets/images/xdesign.jpg"

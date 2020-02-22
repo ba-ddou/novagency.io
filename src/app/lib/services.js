@@ -20,15 +20,15 @@ export default new class services {
             let { id, ...error } = await db.collection('inquiries').add(values);
             if (id) {
                 console.log(id);
-                return `inquiry saved successfully | With id ${id}`
+                return [`inquiry saved successfully | With id ${id}`,false]
             }
             else {
                 console.log(error);
-                return 'there was a problem submiting your inquiry'
+                return [false,'there was a problem submiting your inquiry']
             }
         } catch (error) {
             await new Promise((resolve, reject) => setTimeout(resolve, 1000));
-            return 'mock inquiry was succefully saved'
+            return ['mock inquiry was succefully saved',false]
         }
 
 

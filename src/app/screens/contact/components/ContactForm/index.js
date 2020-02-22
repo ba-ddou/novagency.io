@@ -8,26 +8,34 @@
 
 import React, { Component } from 'react';
 import './styles.sass';
-import { observer, inject} from 'mobx-react'
-import { Formik, Form} from 'formik';
+import { observer, inject } from 'mobx-react'
+import { Formik, Form } from 'formik';
 import FormField from 'app/components/FormField'
 import * as Yup from 'yup'
 import SubmitButton from '../SubmitButton'
+import FloatingMessage from 'app/components/FloatingMessage'
+@inject('services','viewStore')
+@observer
+export default class ContactForm extends Component {
 
-@inject('services')
-export default class ContactForm extends Component{
-    
     // for submit handler
-    submit = async (values,{resetForm}) => {
+    submit = async (values, { resetForm }) => {
         console.log('submit');
-        var res = await this.props.services.submitInquiry(values);
-        alert(res);
-        resetForm();
+        var [res, err] = await this.props.services.submitInquiry(values);
+        if (res) {
+            this.props.viewStore.floatingMessageContent = res;
+            setTimeout(()=>{
+                this.props.viewStore.floatingMessageContent = false;
+            },3000);
+            resetForm();
+        } else {
+
+        }
         return true;
     }
-    
 
-    render(){
+
+    render() {
         return (
             <div id="contactForm" className={this.props.className}>
                 {/* Formik HOC */}
@@ -77,7 +85,8 @@ export default class ContactForm extends Component{
                         <SubmitButton />
                     </Form>
                 </Formik>
-    
+                {this.props.viewStore.floatingMessageContent 
+                && <FloatingMessage content={this.props.viewStore.floatingMessageContent} />}
             </div >
         );
     }

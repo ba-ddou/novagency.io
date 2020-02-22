@@ -6,6 +6,9 @@ class viewStore {
     @observable
     language = 'en';
 
+    @observable
+    floatingMessageContent = false;
+
     
 }
 

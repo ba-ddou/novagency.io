@@ -13,6 +13,8 @@ import { BrowserRouter, Route, useParams, useRouteMatch } from 'react-router-dom
 import ProjectsCarousel from './components/ProjectsCarousel'
 import Project from 'app/screens/project'
 import { inject } from 'mobx-react'
+import { Helmet } from 'react-helmet'
+
 
 
 const Projects = inject('services', 'modelStore')(({ services, modelStore }) => {
@@ -27,10 +29,14 @@ const Projects = inject('services', 'modelStore')(({ services, modelStore }) => 
         };
         run();
     });
-    
-    
+
+
     return (
         <div id="projectsPage" className="mainContent-page">
+            {/* all page specific HTML meta data goes inside Helmet*/}
+            <Helmet>
+                <title>Nova - Projects</title>
+            </Helmet>
             <BrowserRouter>
                 {/* Render the Projects carousel when the path matches the current route */}
                 <Route exact path={path} >

@@ -27,7 +27,7 @@ export default new class services {
                 return 'there was a problem submiting your inquiry'
             }
         } catch (error) {
-            await new Promise((resolve, reject) => setTimeout(resolve, 300));
+            await new Promise((resolve, reject) => setTimeout(resolve, 1000));
             return 'mock inquiry was succefully saved'
         }
 

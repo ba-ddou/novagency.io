@@ -4,20 +4,20 @@
 
 
 @keyframes drop
-    0% {top: -50px}
-    50% {top: 10px}
-    100% {top: 10px}
+    0% {top: -5rem}
+    50% {top: 1rem}
+    100% {top: 1rem}
 
 
 .floatingMessage
     background-color: $mateBlack
     position: fixed
-    width: 240px
-    height: 30px
+    width: 24rem
+    height: 3rem
     left: 50%
     @include transform(translateX(-50%))
-    border-radius: 5px
-    box-shadow: rgba(0,0,0,0.3) 0 4px 12px
+    border-radius: 0.5rem
+    box-shadow: rgba(0,0,0,0.3) 0 0.4rem 1.2rem
     animation-name: drop
     animation-duration: 1.6s
     animation-direction: alternate
@@ -27,8 +27,7 @@
     
     span
         color: white
-        font-family: Futura LT
-        font-size: 1rem
+        @include font-settings (GeomanistRegular, 1rem)
         display: inline-block
         position: absolute
         top: 50%

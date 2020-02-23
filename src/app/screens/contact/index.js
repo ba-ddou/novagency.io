@@ -11,11 +11,16 @@ import './styles.sass'
 import ContactForm from './components/ContactForm'
 import { inject, observer } from 'mobx-react'
 import copy from './copy'
+import { Helmet } from 'react-helmet'
+
 
 const Contact = inject('viewStore')(observer(({ viewStore }) => {
     let language = viewStore.language;
     return (
         <div id="contactPage" className="mainContent-page">
+            <Helmet>
+                <title>Nova - Contact</title>
+            </Helmet>
             <div id="contactPage-copy" className="mainContent-page-splitScreen">
                 <span id="contactPage-copy-tagLine">
                     {copy.tagLineOne[language]}<br />

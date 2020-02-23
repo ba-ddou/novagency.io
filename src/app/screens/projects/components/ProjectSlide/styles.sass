@@ -2,7 +2,6 @@
 
 
 .projectSlide
-    
     height: calc(100vh - 220px)
     width: 40vw !important
     padding: 5px
@@ -18,10 +17,8 @@
             width: 100%
             height: auto
             display: block
-        
     
     .projectSlide-info
-        // background-color: red
         height: 100%
         padding: 10px
         color: $mateBlack
@@ -37,5 +34,29 @@
         
         .projectSlide-info-services
 
+.slick-slide
+    position: relative    
+    transform: scale(0.8)
+    transition: 0.5s all ease
+    filter: blur(0.25rem)
+    .projectSlide
+        .projectSlide-info
+            opacity: 0
+    // &:before
+    //     content: ""
+    //     position: absolute
+    //     top: 0
+    //     left: 0
+    //     right: 0
+    //     bottom: 0
+    //     height: calc(100% - 100px)
+    //     background: linear-gradient(90deg, rgba(234,234,234,0) 0%, rgba(234,234,234,1) 100%)
         
-    
+.slick-active, .slick-current, .slick-center
+    transform: scale(1)
+    filter: blur(0)
+    // &:before
+    //     background: none
+    .projectSlide
+        .projectSlide-info
+            opacity: 1

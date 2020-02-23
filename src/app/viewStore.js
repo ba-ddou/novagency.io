@@ -15,7 +15,7 @@ class viewStore {
 	floatingMessageContent = false;
 
 	@observable
-	splashScreen = true;
+	splashScreen = 2;
 }
 
 export default new viewStore();

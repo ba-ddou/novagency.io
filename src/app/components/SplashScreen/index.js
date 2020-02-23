@@ -10,10 +10,9 @@ import React, { useEffect } from "react";
 import "./styles.sass";
 import { observer, inject } from "mobx-react";
 import { motion, useAnimation } from "framer-motion";
-import icon from "app/assets/images/icon.svg";
 
 const SplashScreen = inject("viewStore")(
-	observer(({ viewStore }) => {
+	observer(({ viewStore, duration }) => {
 		let variants = {
 			hidden: {
 				opacity: 0,
@@ -48,7 +47,7 @@ const SplashScreen = inject("viewStore")(
 			<motion.div id="splashScreen" animate={controls}>
 				<motion.svg
 					xmlns="http://www.w3.org/2000/svg"
-					viewBox="0 0 100 100"
+					viewBox="-22 0 100 100"
 					className="item">
 					<motion.path
 						// d="M0 100V0l50 50 50-50v100L75 75l-25 25-25-25z"
@@ -58,31 +57,30 @@ const SplashScreen = inject("viewStore")(
 						animate="visible"
 						transition={{
 							default: {
-								duration: 2,
+								duration: duration,
 								ease: "easeInOut",
 								loop: Infinity
 							},
 							fill: {
-								duration: 2,
+								duration: duration,
 								ease: [1, 0, 0.8, 1],
 								loop: Infinity
 							}
 						}}
 					/>
 					<motion.path
-						// d="M0 100V0l50 50 50-50v100L75 75l-25 25-25-25z"
 						d="M56.58,120.93a61.43,61.43,0,0,1-29,7.07,62.64,62.64,0,0,1-26.49-5.83V48.12Z"
 						variants={variants}
 						initial="hidden"
 						animate="visible"
 						transition={{
 							default: {
-								duration: 2,
+								duration: duration,
 								ease: "easeInOut",
 								loop: Infinity
 							},
 							fill: {
-								duration: 2,
+								duration: duration,
 								ease: [1, 0, 0.8, 1],
 								loop: Infinity
 							}

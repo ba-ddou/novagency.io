@@ -37,7 +37,9 @@ export default class App extends Component {
 					/>
 				</BrowserRouter>
 				<Footer />
-				{viewStore.splashScreen && <SplashScreen />}
+				{viewStore.splashScreen && (
+					<SplashScreen duration={viewStore.splashScreen} />
+				)}
 			</Provider>
 		);
 	}

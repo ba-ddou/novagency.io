@@ -11,6 +11,8 @@ import services from "app/lib/services";
 import Projects from "app/screens/projects";
 import About from "app/screens/about";
 import SplashScreen from "app/components/SplashScreen";
+
+@observer
 export default class App extends Component {
 	constructor() {
 		super();

@@ -32,7 +32,7 @@ export const SvgSpinningBtn = ({ spin, fix,text }) => {
                 <img src={spin} />
             </SpinWrapper>
             {fix && <img src={fix} />}
-            {text && <span className="center-XY">{text}</span>}
+            {text && <span>{text}</span>}
         </div>
 
     )

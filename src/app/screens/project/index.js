@@ -16,14 +16,18 @@ import { SvgSpinningBtn } from 'app/components/SpinningBtn';
 import img from 'app/assets/images/xdesign.jpg';
 import apple from 'app/assets/images/apple.svg';
 import { Link } from 'react-router-dom';
+import { Helmet } from 'react-helmet'
 
 
 const Project = inject('modelStore')(observer(
-    ({modelStore}) => {
+    ({ modelStore }) => {
         let { projectName } = useParams();
         let project = modelStore.getProject(projectName);
-        if(modelStore.projects.length>0) return (
+        if (modelStore.projects.length > 0) return (
             <div id="projectPage">
+                <Helmet>
+                    <title>Nova - {projectName}</title>
+                </Helmet>
                 <ProjectsNavBar />
                 <div className="projectPage-info">
                     <div className="projectPage-info-services">

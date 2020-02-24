@@ -1,0 +1,95 @@
+@import 'styles/index.sass'
+
+.mainContent-about
+    margin: 4.8rem 0
+    display: grid
+    grid-template-columns: 1fr
+    grid-template-rows: auto
+    grid-template-areas: "description" "design" "code" "cta"
+    @include for-tablet-portrait-up 
+        grid-template-areas: "description description" "design code" "cta cta"
+        grid-template-columns: 1fr 1fr
+        margin: 4.8rem 4.8rem
+    @include for-desktop-up
+        grid-template-areas: "description design" "cta code"
+        grid-template-columns: 1fr 1.25fr
+    .mainContent-description
+        grid-area: description
+        margin-bottom: 4.8rem
+        h1
+            @include font-settings (GeomanistBlack, 2rem)
+            @include for-desktop-up 
+            @include for-tablet-portrait-up 
+                @include font-settings (GeomanistBlack, 3rem)
+        p
+            @include font-settings(GeomanistRegular, 1.2rem)
+    .mainContent-cta
+        grid-area: cta
+        justify-self: center
+        @include for-desktop-up
+            align-self: center
+            justify-self: stretch
+            
+
+    .mainContent-design
+        grid-area: design
+        justify-self: center
+        margin-bottom: 4.8rem
+        @include for-tablet-portrait-up 
+            place-self: center
+        @include for-desktop-up
+            display: flex
+            align-items: center
+            justify-self: end
+        img
+            width: 20rem
+        p
+            @include font-settings(GeomanistRegular, 1.2rem)
+            width: 20rem
+            margin-bottom: 4.8rem
+            position: relative
+            &:before
+                content: "DESIGN"
+                position: absolute
+                top: 0
+                bottom: 0
+                right: 0
+                left: 0
+                text-align: center
+                line-height: 0.5
+                @include font-settings(GeomanistBlack, 5rem)
+                @include colop(0.1)
+            @include for-desktop-up
+                margin-right: 7.2rem
+    .mainContent-code
+        grid-area: code
+        justify-self: center
+        margin-bottom: 4.8rem
+        @include for-tablet-portrait-up 
+            place-self: center
+        @include for-desktop-up
+            display: flex
+            flex-direction: row-reverse
+            align-items: center
+            justify-self: end
+            margin-bottom: 0
+        img
+            width: 18rem
+            @include for-desktop-up
+                margin-right: 7.2rem
+        p
+            @include font-settings(GeomanistRegular, 1.2rem)
+            width: 20rem
+            margin-bottom: 4.8rem
+            position: relative
+            &:before
+                content: "CODE"
+                position: absolute
+                top: 0
+                bottom: 0
+                right: 0
+                left: 0
+                text-align: center
+                line-height: 0.5
+                @include font-settings(GeomanistBlack, 5rem)
+                @include colop(0.1)

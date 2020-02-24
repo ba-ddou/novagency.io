@@ -13,11 +13,7 @@
     cursor: pointer
     text-align: center
     backface-visibility: hidden
-    transition: 0.5s all ease
-    &:hover
-        @include transform(scale(1.1) translateY(-0.5rem))
-    &:active
-        @include transform(translateY(0.3rem))
+    
     >img
         display: block
         width: 40%
@@ -35,6 +31,12 @@
         @include transform(translate(-50%, -50%))
         @include font-settings (GeomanistBold, 1.5rem)
         color: $mateBlack
+    &:hover
+        .svgSpin
+            @include transform(scale(1.2))
+    &:active
+        .svgSpin
+            @include transform(scale(.8))
 
 .spinWrapper
     width: 100%
@@ -47,6 +49,8 @@
         display: block
         width: 100%
         height: auto
+        transition: 0.5s all ease
+    
         
         
     

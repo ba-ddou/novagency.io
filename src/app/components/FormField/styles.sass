@@ -32,7 +32,7 @@
         resize: none
 
     .genericInputInfo 
-        height: 2.5rem
+        height: 2rem
         margin-top: .5rem
 
 
@@ -59,9 +59,16 @@
         style: solid 
         color: $successColor!important
 
+    
+// this style is applied to input fields when the form is submitting
+.genericInput-isSubmiting
+    color: green !important
+    border-bottom: 
+        color : green !important
+
+
 .genericInputInfo 
     height: 2.4rem
-
     .genericInputInfo-error 
         @include font-settings (GeomanistRegular, 1rem)
         color: $errorColor

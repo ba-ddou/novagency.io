@@ -2,48 +2,40 @@
 
 
 .projectSlide
-    width: 70vw
-    height: 100%
+    
+    height: calc(100vh - 220px)
+    width: 40vw !important
+    padding: 5px
     cursor: pointer
-    margin-bottom: 4.8rem
-    padding: 1rem
-    @include for-tablet-portrait-up 
-        width: 65vw
-    @include for-big-desktop-up 
-        width: 35vw
     .projectSlide-thumbnail
+        height: calc(100% - 100px)
+        color: $white
+        background-color: $mateBlack
+        text-align: center
+        vertical-align: middle
+        overflow: hidden
         img
             width: 100%
             height: auto
             display: block
+        
     
     .projectSlide-info
-        margin-top: 1.2rem
+        // background-color: red
+        height: 100%
+        padding: 10px
         color: $mateBlack
+        font-size: 12pt
         >span
             display: block
-        & :nth-child(1)
-            @include font-settings (GeomanistBold, 1.2rem)
-            text-transform: uppercase
-        & :nth-child(2)
-            @include font-settings (GeomanistBold, 0.96rem)
-            margin-bottom: 1.2rem
-        & :nth-child(3)
-            @include font-settings (GeomanistRegular, 0.96rem)
-
-.slick-slide   
-    transform: scaleY(0.9)
-    transition: 0.5s all ease
-    filter: blur(0.25rem)
-    .projectSlide
-        .projectSlide-info
-            opacity: 0
         
-.slick-active, .slick-current, .slick-center
-    transform: scale(1)
-    filter: blur(0)
-    // &:before
-    //     background: none
-    .projectSlide
-        .projectSlide-info
-            opacity: 1
+        .projectSlide-info-name
+
+        
+        .projectSlide-info-tagline
+
+        
+        .projectSlide-info-services
+
+        
+    

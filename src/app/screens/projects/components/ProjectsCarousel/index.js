@@ -43,7 +43,7 @@ export default class ProjectsCarousel extends Component {
 
     render() {
         return (
-            <div className="projectsCarousel">
+            <div id="projectsCarousel">
                     
                     <Slider {...this.settings} ref={element=>this.slider=element}>
                         {/* the projects data array from the model store

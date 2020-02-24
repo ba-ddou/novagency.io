@@ -9,7 +9,7 @@ import React from 'react';
 import './styles.sass'
 import { Link } from 'react-router-dom'
 import { toJS } from 'mobx'
-import thumb from 'app/assets/images/Essential Stationery.png'
+import thumb from 'app/assets/images/xdesign.jpg'
 
 // {JSON.stringify(toJS(data))}
 

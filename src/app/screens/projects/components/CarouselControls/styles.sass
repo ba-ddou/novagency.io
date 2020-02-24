@@ -1,18 +1,19 @@
 @import 'styles/index.sass'
 .carouselControls
     display: none
-    @include for-tablet-portrait-up 
+    @include for-big-desktop-up 
         display: flex
         justify-content: space-between
     .carouselControls-left,.carouselControls-right
     .carouselControls-left
-        @include for-tablet-portrait-up 
+        @include for-tablet-portrait-up
             margin-left: 5rem
             position: relative
             bottom: 10rem
+            margin-bottom: -10rem
     .carouselControls-right
-        @include for-tablet-portrait-up 
+        @include for-tablet-portrait-up
             margin-right: 5rem
             position: relative
             bottom: 10rem
-
+            margin-bottom: -10rem

@@ -8,6 +8,7 @@
 import React, { Component } from "react";
 import "./styles.sass";
 import { observer, inject } from "mobx-react";
+import { toJS } from "mobx";
 import { Formik, Form } from "formik";
 import FormField from "app/components/FormField";
 import * as Yup from "yup";
@@ -21,13 +22,22 @@ export default class ContactForm extends Component {
 		console.log("submit");
 		var [res, err] = await this.props.services.submitInquiry(values);
 		if (res) {
-			this.props.viewStore.floatingMessageContent = res;
+			this.props.viewStore.floatingMessageContent = {
+				text: res,
+				type: "success"
+			};
 			setTimeout(() => {
 				this.props.viewStore.floatingMessageContent = false;
 			}, 3000);
 			resetForm();
 		} else {
-			console.error(err);
+			this.props.viewStore.floatingMessageContent = {
+				text: err,
+				type: "error"
+			};
+			setTimeout(() => {
+				this.props.viewStore.floatingMessageContent = false;
+			}, 3000);
 		}
 		return true;
 	};
@@ -82,7 +92,9 @@ export default class ContactForm extends Component {
 				</Formik>
 				{this.props.viewStore.floatingMessageContent && (
 					<FloatingMessage
-						content={this.props.viewStore.floatingMessageContent}
+						content={toJS(
+							this.props.viewStore.floatingMessageContent
+						)}
 					/>
 				)}
 			</div>

@@ -29,7 +29,7 @@ export default new (class services {
 			}
 		} catch (error) {
 			await new Promise((resolve, reject) => setTimeout(resolve, 1000));
-			return ["mock inquiry was succefully sent", false];
+			return ["mock inquiry was succefully sent",false];
 		}
 	};
 

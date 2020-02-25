@@ -17,7 +17,7 @@ const SubmitButton = () => {
     let {isSubmitting} = useFormikContext();
     return (
         <button type="submit">
-            <SvgSpinningBtn spin={send} text={!isSubmitting ? "SEND" : "SENDING"} />
+            <SvgSpinningBtn spin={send} text={"SEND"} />
         </button>
     );
 }

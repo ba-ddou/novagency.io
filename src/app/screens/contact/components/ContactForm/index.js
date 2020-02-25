@@ -19,9 +19,11 @@ import FloatingMessage from "app/components/FloatingMessage";
 export default class ContactForm extends Component {
 	// for submit handler
 	submit = async (values, { resetForm }) => {
+        this.props.viewStore.splashScreen = 1.2;
 		console.log("submit");
 		var [res, err] = await this.props.services.submitInquiry(values);
 		if (res) {
+            this.props.viewStore.splashScreen = "fade"
 			this.props.viewStore.floatingMessageContent = {
 				text: res,
 				type: "success"
@@ -31,6 +33,7 @@ export default class ContactForm extends Component {
 			}, 3000);
 			resetForm();
 		} else {
+            this.props.viewStore.splashScreen = "fade"
 			this.props.viewStore.floatingMessageContent = {
 				text: err,
 				type: "error"

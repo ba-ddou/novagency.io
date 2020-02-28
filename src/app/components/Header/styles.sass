@@ -13,10 +13,13 @@
             @include font-settings(GothamBlack, 2rem)
         
         .banner-slogan
-            @include font-settings(GeomanistBlack, 1.6rem)
+            @include font-settings(GeomanistBlack, 1.4rem)
+            @include for-tablet-portrait-up 
+                @include font-settings(GeomanistBlack, 1.8rem)
             order: 3
             text-align: center
             width: 100%
+            text-transform: uppercase
             @include for-tablet-portrait-up 
                 order: 0
                 text-align: center

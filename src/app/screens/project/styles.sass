@@ -1,6 +1,44 @@
 @import 'styles/index.sass'
 
-
-
+.projectPage
+    margin-left: 3rem
+    margin-right: 3rem
+    @include for-tablet-portrait-up 
+        margin-left: 16.4rem
+        margin-right: 16.4rem
+    .projectPage-info
+        display: flex
+        margin-top: 4.8rem
+        // justify-content: space-between
+        align-items: flex-start
+        .projectPage-info-services
+            display: flex
+            flex-direction: column
+            @include font-settings (GeomanistRegular, 1.2rem)
+            font-weight: bolder
+            margin-right: 4.8rem
+            @include for-tablet-portrait-up
+                margin-right: 9.6rem
+            .projectPage-info-service
+                white-space: nowrap
+        .projectPage-info-description
+            @include font-settings (GeomanistRegular, 1.2rem)
+            @include for-tablet-portrait-up
+                width: 40%
+    .projectPage-images
+        width: 100%
+        margin: 9.6rem 0
+        img
+            width: 100%
+    .projectPage-requestInquiry
+        display: flex
+        justify-content: center
+        align-items: center
+        margin: 9.6rem 0
+        .projectPage-requestInquiry-text
+            margin-right: 4.8rem
+            @include font-settings (GeomanistBold, 1.8rem)
+            .projectPage-requestInquiry-grayText
+                @include colop(0.33)
 
 

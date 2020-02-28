@@ -9,7 +9,7 @@
     .projectPage-info
         display: flex
         margin-top: 4.8rem
-        // justify-content: space-between
+        justify-content: center
         align-items: flex-start
         .projectPage-info-services
             display: flex
@@ -17,19 +17,26 @@
             @include font-settings (GeomanistRegular, 1.2rem)
             font-weight: bolder
             margin-right: 4.8rem
+            text-align: right
             @include for-tablet-portrait-up
                 margin-right: 9.6rem
             .projectPage-info-service
                 white-space: nowrap
         .projectPage-info-description
             @include font-settings (GeomanistRegular, 1.2rem)
+            text-align: left
             @include for-tablet-portrait-up
                 width: 40%
     .projectPage-images
-        width: 100%
-        margin: 9.6rem 0
+        margin: 9.6rem -3rem
+        width: 100vw
         img
             width: 100%
+        @include for-tablet-portrait-up
+            width: 100%
+            margin: 9.6rem 0
+            img
+                width: 100%
     .projectPage-requestInquiry
         display: flex
         justify-content: center

@@ -173,7 +173,7 @@ const staticProjects = [
 		]
 	},
 	{
-		name: "Static Nova 3",
+		name: "Idyr",
 		tagline: "A better future happens by design",
 		description: {
 			en:
@@ -204,10 +204,9 @@ const staticProjects = [
 		},
 		content: [
 			{
-				type: "image",
+				type: "video",
 				alt: "image1",
-				src:
-					"https://firebasestorage.googleapis.com/v0/b/nova-dev-00.appspot.com/o/Essential%20Stationery.png?alt=media&token=0ae18725-9b33-4a2d-8331-b7e2661916e6"
+				src: ""
 			},
 			{
 				type: "image",

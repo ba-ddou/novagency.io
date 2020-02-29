@@ -16,6 +16,7 @@ import img from "app/assets/images/xdesign.jpg";
 import apple from "app/assets/images/apple.svg";
 import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet";
+import video from "app/assets/images/idyr_ad.mp4";
 
 const Project = inject(
 	"modelStore",
@@ -49,14 +50,27 @@ const Project = inject(
 							</div>
 						</div>
 						<div className="projectPage-images">
-							{project.content.map((image, index) => (
-								<img
-									key={index}
-									className="projectPage-images-image"
-									src={image.src}
-									alt={image.alt}
-								/>
-							))}
+							{project.content.map((content, index) => {
+								if (content.type == "image")
+									return (
+										<img
+											key={index}
+											className="projectPage-images-image"
+											src={content.src}
+											alt={content.alt}
+										/>
+									);
+								else if (content.type == "video")
+									return (
+										<video
+											key={index}
+											className="projectPage-images-image"
+											src={video}
+											alt={content.alt}
+											controls={true}
+										/>
+									);
+							})}
 						</div>
 						<ProjectControls />
 						<div className="projectPage-requestInquiry">

@@ -12,11 +12,13 @@ import { toJS } from "mobx";
 import ProjectsNavBar from "./components/ProjectsNavBar";
 import ProjectControls from "./components/ProjectControls";
 import { SvgSpinningBtn } from "app/components/SpinningBtn";
+import devis from "app/assets/images/Devis-Button.svg";
 import img from "app/assets/images/xdesign.jpg";
 import apple from "app/assets/images/apple.svg";
 import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet";
 import video from "app/assets/images/idyr_ad.mp4";
+
 
 const Project = inject(
 	"modelStore",
@@ -74,18 +76,17 @@ const Project = inject(
 						</div>
 						<ProjectControls />
 						<div className="projectPage-requestInquiry">
-							<div className="projectPage-requestInquiry-text">
-								Et si votre projet ?
-							</div>
-							<Link to="/contact/">
-								<SvgSpinningBtn spin={img} fix={apple} />
-							</Link>
-						</div>
+                    <div className="projectPage-requestInquiry-text"><span className="projectPage-requestInquiry-grayText">Et si notre prochaine fierté</span><br></br>c'était votre projet ?</div>
+                    <Link to="/contact/">
+                        <SvgSpinningBtn spin={devis} fix="" />
+                    </Link>
+
+                </div>
 					</div>
 				);
 			} else return <Redirect to="/404" />;
 		} else return false;
-	})
-);
+	});
+
 
 export default Project;

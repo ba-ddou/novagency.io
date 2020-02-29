@@ -19,7 +19,12 @@ const About = () => {
 		<div className="mainContent-page">
 			<div className="mainContent-about">
 				<div className="mainContent-description">
-					<h1>Digital Creative Agency</h1>
+					{/* <h1>Digital Creative Agency</h1> */}
+					<div className="mainContent-title">
+						<span>Digital</span>
+						<span>Creative</span>
+						<span>Agency</span>
+					</div>
 					<p>
 						Lectus quam id leo in vitae turpis massa sed. In eu mi
 						bibendum neque. Aliquet enim tortor at auctor urna nunc

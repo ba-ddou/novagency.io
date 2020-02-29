@@ -1,9 +1,12 @@
+@import 'styles/index.sass'
 
-
-
-.navbar-navlink
-    margin : 10px
-            
-.navbar-navlink-selected
-    font-weight: bolder
-            
+.projectPage-NavBar
+    text-align: center
+    margin-top: 2.4rem
+    .navbar-navlink
+        @include font-settings(GeomanistBold, 1.2rem)
+        @include colop(0.33)
+        margin-right: 2rem
+        text-transform: uppercase
+    .navbar-navlink-selected
+        @include colop(1)

@@ -69,6 +69,7 @@ function race(request) {
 	]);
 }
 
+
 const staticProjects = [
 	{
 		name: "static Nova 1",

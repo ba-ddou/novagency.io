@@ -13,6 +13,7 @@ export default new (class services {
 	submitInquiry = async values => {
 		try {
 			let db = firebase.firestore();
+			values.timestamp = firebase.firestore.Timestamp.now().toDate();
 			let { timeout, id, ...error } = await race(
 				db.collection("inquiries").add(values)
 			);

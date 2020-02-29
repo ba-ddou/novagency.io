@@ -10,23 +10,47 @@
         grid-template-areas: "description description" "design code" "cta cta"
         grid-template-columns: 1fr 1fr
         margin: 4.8rem 4.8rem
-    @include for-desktop-up
+    @include for-big-desktop-up 
         grid-template-areas: "description design" "cta code"
         grid-template-columns: 1fr 1.25fr
+        margin: 4.8rem 9.6rem
     .mainContent-description
         grid-area: description
         margin-bottom: 4.8rem
-        h1
+        @include for-tablet-portrait-up
+            display: flex
+            justify-content: center
+            // align-items: flex-start
+        @include for-big-desktop-up
+                display: initial
+        .mainContent-title
             @include font-settings (GeomanistBlack, 2rem)
-            @include for-desktop-up 
             @include for-tablet-portrait-up 
                 @include font-settings (GeomanistBlack, 3rem)
+                display: flex
+                flex-direction: column
+                margin-right: 4.8rem
+                @include for-big-desktop-up
+                    margin-right: 0
+            @include for-big-desktop-up
+                display: initial
+            span
+                margin-right: 0.5rem
+                line-height: 1
+                @include for-big-desktop-up
+                    margin-right: 1rem
         p
             @include font-settings(GeomanistRegular, 1.2rem)
+            @include for-tablet-portrait-up
+                margin: 0
+                width: 50%
+            @include for-big-desktop-up
+                width: 80%
+                margin-top: 1.2rem
     .mainContent-cta
         grid-area: cta
         justify-self: center
-        @include for-desktop-up
+        @include for-big-desktop-up 
             align-self: center
             justify-self: stretch
             
@@ -37,7 +61,7 @@
         margin-bottom: 4.8rem
         @include for-tablet-portrait-up 
             place-self: center
-        @include for-desktop-up
+        @include for-big-desktop-up 
             display: flex
             align-items: center
             justify-self: end
@@ -45,6 +69,7 @@
             width: 20rem
         p
             @include font-settings(GeomanistRegular, 1.2rem)
+            font-weight: bolder
             width: 20rem
             margin-bottom: 4.8rem
             position: relative
@@ -59,7 +84,7 @@
                 line-height: 0.5
                 @include font-settings(GeomanistBlack, 5rem)
                 @include colop(0.1)
-            @include for-desktop-up
+            @include for-big-desktop-up 
                 margin-right: 7.2rem
     .mainContent-code
         grid-area: code
@@ -67,7 +92,7 @@
         margin-bottom: 4.8rem
         @include for-tablet-portrait-up 
             place-self: center
-        @include for-desktop-up
+        @include for-big-desktop-up 
             display: flex
             flex-direction: row-reverse
             align-items: center
@@ -75,10 +100,11 @@
             margin-bottom: 0
         img
             width: 18rem
-            @include for-desktop-up
+            @include for-big-desktop-up 
                 margin-right: 7.2rem
         p
             @include font-settings(GeomanistRegular, 1.2rem)
+            font-weight: bolder
             width: 20rem
             margin-bottom: 4.8rem
             position: relative

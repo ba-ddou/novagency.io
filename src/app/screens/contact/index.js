@@ -27,6 +27,18 @@ const Contact = inject('viewStore')(observer(({ viewStore }) => {
                     {copy.tagLineTwo[language]}<br />
                     <span className="contactPage-copy-grey">{copy.tagLineThree[language]}</span>
                 </span>
+                <div className="contactPage-contactInfo">
+                    <div className="contactPage-contactAbbasset">
+                        <p className="contactPage-contactTitle">Abdelbassite Badou</p>
+                        <p className="contactPage-contactP">+212 657099413</p>
+                        <p className="contactPage-contactM">Abdelbassitebadou@novagency.com</p>
+                    </div>
+                    <div className="contactPage-contactMehdi">
+                        <p className="contactPage-contactTitle">Mehdi El Idrissi</p>
+                        <p className="contactPage-contactP">+212 656160669</p>
+                        <p className="contactPage-contactM">Mehdielidrissi@novagency.com</p>
+                    </div>
+                </div>
             </div >
             <ContactForm className="mainContent-page-splitScreen" />
         </div >

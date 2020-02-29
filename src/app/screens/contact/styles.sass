@@ -5,15 +5,52 @@
     @include for-tablet-portrait-up 
         display: flex
         align-items: flex-start
-        margin: 3.2rem 6.4rem
+        margin: 3.2rem 6.4rem 
     #contactPage-copy
         margin-bottom: 5rem
+        span
+            @include for-tablet-portrait-up 
+                line-height: 1.1
         #contactPage-copy-tagLine
-            @include font-settings (GeomanistBlack, 3rem)
+            @include font-settings (GeomanistBlack, 4rem)
             .contactPage-copy-grey
                 @include colop(0.33)
+        .contactPage-contactInfo
+            display: flex
+            flex-direction: column
+            justify-content: space-around
+            margin-top: 2.4rem
+            .contactPage-contactAbbasset
+                .contactPage-contactTitle
+                    @include font-settings (GeomanistRegular, 1.4rem)
+                    font-weight: bolder
+                    line-height: 0.5
+                    margin-bottom: 1.8rem
+                .contactPage-contactP
+                    @include font-settings (GeomanistRegular, 1.2rem)
+                    line-height: 0.5
+                    margin-bottom: 1.2rem
+                .contactPage-contactM
+                    @include font-settings (GeomanistRegular, 1.2rem)
+                    line-height: 0.5
+                    margin-bottom: 1.2rem
+            .contactPage-contactMehdi
+                margin-top: 2.4rem
+                .contactPage-contactTitle
+                    @include font-settings (GeomanistRegular, 1.4rem)
+                    font-weight: bolder
+                    line-height: 0.5
+                    margin-bottom: 1.8rem
+                .contactPage-contactP
+                    @include font-settings (GeomanistRegular, 1.2rem)
+                    line-height: 0.5
+                    margin-bottom: 1.2rem
+                .contactPage-contactM
+                    @include font-settings (GeomanistRegular, 1.2rem)
+                    line-height: 0.5
+                    margin-bottom: 1.2rem
     .mainContent-page-splitScreen
-        @include for-tablet-portrait-up 
+        @include for-tablet-portrait-up
             flex: 100%
             
         

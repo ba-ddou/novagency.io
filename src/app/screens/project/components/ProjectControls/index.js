@@ -13,8 +13,8 @@ import './styles.sass'
 import { inject } from 'mobx-react';
 import { Link } from 'react-router-dom';
 import { SvgSpinningBtn } from 'app/components/SpinningBtn';
-import img from 'app/assets/images/xdesign.jpg';
-import apple from 'app/assets/images/apple.svg';
+import nextP from 'app/assets/images/nextProject.svg';
+import prevP from 'app/assets/images/prevProject.svg';
 
 
 const ProjectControls = inject('modelStore')((props) => {
@@ -32,12 +32,12 @@ const ProjectControls = inject('modelStore')((props) => {
         <div className="projectControls">
             <div className="projectControls-left">
                 <Link to={`/projects/${projectToLeft}`}>
-                    <SvgSpinningBtn spin={img} text={projectToLeft} />
+                    <SvgSpinningBtn spin={prevP} text={projectToLeft} />
                 </Link>
             </div>
             <div className="projectControls-right">
                 <Link to={`/projects/${projectToRight}`}>
-                    <SvgSpinningBtn spin={img} text={projectToRight} />
+                    <SvgSpinningBtn spin={nextP} text={projectToRight} />
                 </Link>
             </div>
 

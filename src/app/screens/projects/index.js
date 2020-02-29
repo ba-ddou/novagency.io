@@ -20,20 +20,10 @@ import { inject } from "mobx-react";
 import { Helmet } from "react-helmet";
 
 const Projects = inject(
-	"services",
 	"modelStore"
-)(({ services, modelStore }) => {
+)(({ modelStore }) => {
 	// get the current Route's path
 	let { path } = useRouteMatch();
-
-	useEffect(_ => {
-		let run = async _ => {
-			let projects = await services.getProjects();
-			// console.log(projects);
-			modelStore.projects = projects;
-		};
-		run();
-	});
 
 	return (
 		<div id="projectsPage" className="mainContent-page">

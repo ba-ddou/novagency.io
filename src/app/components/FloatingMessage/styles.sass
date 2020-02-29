@@ -10,7 +10,6 @@
 
 
 .floatingMessage
-    background-color: $mateBlack
     position: fixed
     width: 24rem
     height: 3rem
@@ -24,7 +23,6 @@
     animation-iteration-count: 2
     animation-timing-function: ease-in-out
     animation-fill-mode: forwards
-    
     span
         color: white
         @include font-settings (GeomanistRegular, 1rem)
@@ -34,6 +32,14 @@
         left: 50%
         @include transform(translate(-50%,-50%))
         white-space: nowrap
+        
+.floatingMessage-success
+    background-color: $successColor
+.floatingMessage-error
+    background-color: $errorColor
+
+
+    
     
 
 

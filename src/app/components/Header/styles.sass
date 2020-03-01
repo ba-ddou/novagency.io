@@ -6,10 +6,8 @@
         align-items: center
         justify-content: space-between
         flex-wrap: wrap
-        height: 15vh
         @include for-tablet-portrait-up 
             flex-wrap: nowrap
-            height: 10vh
         
         .banner-logotype
             @include font-settings(GothamBlack, 2rem)
@@ -21,7 +19,6 @@
             order: 3
             text-align: center
             width: 100%
-            text-transform: uppercase
             @include for-tablet-portrait-up 
                 order: 0
                 text-align: center
@@ -30,6 +27,8 @@
         .banner-badge
             margin-bottom: 2rem
             -webkit-tap-highlight-color: transparent
+            transform: scale(1.1)
+            // visibility: hidden
             @include for-tablet-portrait-up 
                 margin-bottom: 0
     

@@ -18,10 +18,17 @@ const FloatingMessage = ({ content }) => {
 					? "floatingMessage floatingMessage-success"
 					: "floatingMessage floatingMessage-error"
 			}>
-			<span>{content.text}</span>
+			
+			<span><i className={
+				content.type == "success"
+					? "icon ion-ios-checkmark-circle-filled"
+					: "icon ion-ios-close-circle-filled"
+			}></i>{content.text}</span>
 		</div>,
 		document.getElementById("root")
 	);
 };
 
 export default FloatingMessage;
+
+<ion-icon name="checkmark-circle"></ion-icon>

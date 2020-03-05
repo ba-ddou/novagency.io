@@ -18,10 +18,16 @@ class services {
 
 	submitInquiry = async values => {
 		try {
-			values.timestamp = firebase.firestore.Timestamp.now().toDate;
+			values.timestamp = firebase.firestore.FieldValue.serverTimestamp();
+			console.log("Value :: \n", values);
 			let { timeout, id, ...error } = await race(
 				this.db.collection("inquiries").add(values)
-			);
+			)
+				.then(res => {
+					console.log(res);
+					return res;
+				})
+				.catch(err => console.error(err));
 
 			if (id) {
 				console.log(id);
@@ -34,6 +40,7 @@ class services {
 				return [false, "unknown error, try agian later"];
 			}
 		} catch (error) {
+			console.log(error);
 			await new Promise((resolve, reject) => setTimeout(resolve, 1000));
 			return ["mock inquiry was succefully sent", false];
 		}

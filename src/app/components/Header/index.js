@@ -11,7 +11,6 @@ import devis from "app/assets/images/Devis-Button.svg";
 
 const Header = props => {
 	let path = window.location.pathname;
-	console.log(window.location.pathname);
 	return (
 		<div className="header">
 			<div className="banner">

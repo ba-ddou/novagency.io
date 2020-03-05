@@ -6,16 +6,21 @@
  *
  */
 
-// import * as firebase from 'firebase/app'
-// import 'firebase/firestore';
+import * as firebase from "firebase/app";
+import "firebase/firestore";
+import config from "app/config/config.js";
 
 class services {
+	constructor() {
+		firebase.initializeApp(config.firebaseConfig);
+		this.db = firebase.firestore();
+	}
+
 	submitInquiry = async values => {
 		try {
-			let db = firebase.firestore();
 			values.timestamp = firebase.firestore.Timestamp.now().toDate;
 			let { timeout, id, ...error } = await race(
-				db.collection("inquiries").add(values)
+				this.db.collection("inquiries").add(values)
 			);
 
 			if (id) {
@@ -39,10 +44,9 @@ class services {
 		if (projects) {
 			return JSON.parse(projects);
 		} else {
-			await new Promise((resolve, reject) => setTimeout(resolve, 500));
+			// await new Promise((resolve, reject) => setTimeout(resolve, 500));
 			try {
-				let db = firebase.firestore();
-				let projects = await db
+				let projects = await this.db
 					.collection("projects")
 					.get()
 					.then(snapshot => {
@@ -53,6 +57,7 @@ class services {
 						return arr;
 					});
 				localStorage.setItem("projects", JSON.stringify(projects));
+				console.log("projects data retreived from firebase");
 				return projects;
 			} catch (error) {
 				console.error(error);

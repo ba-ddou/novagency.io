@@ -7,9 +7,9 @@
 .svgSpinningBtn
     display: inline-block
     position: relative
-    width: 8rem
-    height: 8rem
-    border-radius: 8rem
+    width: 7.5rem
+    height: 7.5rem
+    border-radius: 7.5rem
     cursor: pointer
     text-align: center
     backface-visibility: hidden
@@ -29,7 +29,8 @@
         top: 50%
         left: 50%
         @include transform(translate(-50%, -50%))
-        @include font-settings (GeomanistBold, 1.5rem)
+        @include font-settings (GeomanistBold, 1.3rem)
+        text-transform: uppercase
         color: $mateBlack
     &:active
         .svgSpin

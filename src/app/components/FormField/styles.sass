@@ -13,7 +13,7 @@
             width: 0.2rem
             style: solid 
             @include colop(0.33)
-        @include font-settings (GeomanistRegular, 1.2rem)
+        @include font-settings (GeomanistRegular, 1.3rem)
         font-weight: bolder
         outline: none !important
     
@@ -38,7 +38,7 @@
 
 
 .genericTextArea 
-    @include font-settings (GeomanistRegular, 1.2rem)
+    @include font-settings (GeomanistRegular, 1.3rem)
 
 
 
@@ -62,19 +62,19 @@
     
 // this style is applied to input fields when the form is submitting
 .genericInput-isSubmiting
-    color: green !important
+    color: $successColor !important
     border-bottom: 
-        color : green !important
+        color: $successColor !important
 
 
 .genericInputInfo 
     height: 2.4rem
     .genericInputInfo-error 
-        @include font-settings (GeomanistRegular, 1rem)
+        @include font-settings (GeomanistRegular, 1.2rem)
         color: $errorColor
 
 
     .genericInputInfo-validate 
-        @include font-settings (GeomanistRegular, 1rem)
+        @include font-settings (GeomanistRegular, 1.2rem)
         color: $successColor
 

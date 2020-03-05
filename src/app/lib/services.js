@@ -9,7 +9,7 @@
 // import * as firebase from 'firebase/app'
 // import 'firebase/firestore';
 
-export default new (class services {
+class services {
 	submitInquiry = async values => {
 		try {
 			let db = firebase.firestore();
@@ -35,27 +35,37 @@ export default new (class services {
 	};
 
 	getProjects = async () => {
-		await new Promise((resolve, reject) => setTimeout(resolve, 500));
-		try {
-			let db = firebase.firestore();
-			let projects = await db
-				.collection("projects")
-				.get()
-				.then(snapshot => {
-					var arr = [];
-					snapshot.forEach(doc => {
-						arr.push(doc.data());
+		let projects = localStorage.getItem("projects");
+		if (projects) {
+			return JSON.parse(projects);
+		} else {
+			await new Promise((resolve, reject) => setTimeout(resolve, 500));
+			try {
+				let db = firebase.firestore();
+				let projects = await db
+					.collection("projects")
+					.get()
+					.then(snapshot => {
+						var arr = [];
+						snapshot.forEach(doc => {
+							arr.push(doc.data());
+						});
+						return arr;
 					});
-					return arr;
-				});
-			return projects;
-		} catch (error) {
-			console.error(error);
-			await new Promise((resolve, reject) => setTimeout(resolve, 200));
-			return staticProjects;
+				localStorage.setItem("projects", JSON.stringify(projects));
+				return projects;
+			} catch (error) {
+				console.error(error);
+				await new Promise((resolve, reject) =>
+					setTimeout(resolve, 200)
+				);
+				return staticProjects;
+			}
 		}
 	};
-})();
+}
+
+export default new services();
 
 // this is functions uses a setTimeout with the native Promise.race
 // to create a request timeout. If the passed request takes longer than
@@ -68,7 +78,6 @@ function race(request) {
 		)
 	]);
 }
-
 
 const staticProjects = [
 	{

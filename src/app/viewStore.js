@@ -8,6 +8,11 @@ import {
 } from "mobx";
 
 class viewStore {
+	constructor() {
+		let language = localStorage.getItem("language");
+		if (language) this.language = language;
+	}
+
 	@observable
 	language = "en";
 

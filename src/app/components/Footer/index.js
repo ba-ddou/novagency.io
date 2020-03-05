@@ -17,6 +17,7 @@ const Footer = inject("viewStore")(
 				viewStore.splashScreen = 0.6;
 				setTimeout(() => (viewStore.language = lang), 100);
 				setTimeout(() => (viewStore.splashScreen = "fade"), 500);
+				localStorage.setItem("language", lang);
 			}
 		};
 

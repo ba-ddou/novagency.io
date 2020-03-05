@@ -5,56 +5,61 @@
  *
  */
 
-import React, { Component } from "react";
+import React, { useEffect } from "react";
 import "./styles.sass";
 import { observer, inject } from "mobx-react";
 import { toJS } from "mobx";
-import { Formik, Form } from "formik";
+import { Formik, Form, useFormikContext } from "formik";
 import FormField from "app/components/FormField";
 import * as Yup from "yup";
 import SubmitButton from "../SubmitButton";
 import FloatingMessage from "app/components/FloatingMessage";
-@inject("services", "viewStore")
-@observer
-export default class ContactForm extends Component {
-	// for submit handler
-	submit = async (values, { resetForm }) => {
-        this.props.viewStore.splashScreen = 1.2;
-		console.log("submit");
-		var [res, err] = await this.props.services.submitInquiry(values);
-		if (res) {
-            this.props.viewStore.splashScreen = "fade"
-			this.props.viewStore.floatingMessageContent = {
-				text: res,
-				type: "success"
-			};
-			setTimeout(() => {
-				this.props.viewStore.floatingMessageContent = false;
-			}, 3000);
-			resetForm();
-		} else {
-            this.props.viewStore.splashScreen = "fade"
-			this.props.viewStore.floatingMessageContent = {
-				text: err,
-				type: "error"
-			};
-			setTimeout(() => {
-				this.props.viewStore.floatingMessageContent = false;
-			}, 3000);
-		}
-		return true;
-	};
 
-	render() {
+const ContactForm = inject(
+	"services",
+	"viewStore"
+)(
+	observer(props => {
+		// for submit handler
+		let submit = async (values, { resetForm }) => {
+			props.viewStore.splashScreen = 1.2;
+			console.log("submit");
+			var [res, err] = await props.services.submitInquiry(values);
+			if (res) {
+				props.viewStore.splashScreen = "fade";
+				props.viewStore.floatingMessageContent = {
+					text: res,
+					type: "success"
+				};
+				setTimeout(() => {
+					props.viewStore.floatingMessageContent = false;
+				}, 3000);
+				resetForm();
+			} else {
+				props.viewStore.splashScreen = "fade";
+				props.viewStore.floatingMessageContent = {
+					text: err,
+					type: "error"
+				};
+				setTimeout(() => {
+					props.viewStore.floatingMessageContent = false;
+				}, 3000);
+			}
+			return true;
+		};
+
 		return (
-			<div id="contactForm" className={this.props.className}>
+			<div id="contactForm" className={props.className}>
 				{/* Formik HOC */}
 				<Formik
+					// initialValues are retreived from the viewStore
+					// where they're always up to date with the latest user inputs
+					// even if the user navigates away from the contact page
 					initialValues={{
-						fullname: "",
-						email: "",
-						company: "",
-						message: ""
+						fullname: props.viewStore.contactFormInit.fullname,
+						email: props.viewStore.contactFormInit.email,
+						company: props.viewStore.contactFormInit.company,
+						message: props.viewStore.contactFormInit.message
 					}}
 					// Yup validation schema and error messages
 					validationSchema={Yup.object({
@@ -67,7 +72,7 @@ export default class ContactForm extends Component {
 							.min(50, "Must be 50 characters or more")
 							.required("Required")
 					})}
-					onSubmit={this.submit}>
+					onSubmit={submit}>
 					<Form>
 						<FormField
 							name="fullname"
@@ -93,14 +98,14 @@ export default class ContactForm extends Component {
 						<SubmitButton />
 					</Form>
 				</Formik>
-				{this.props.viewStore.floatingMessageContent && (
+				{props.viewStore.floatingMessageContent && (
 					<FloatingMessage
-						content={toJS(
-							this.props.viewStore.floatingMessageContent
-						)}
+						content={toJS(props.viewStore.floatingMessageContent)}
 					/>
 				)}
 			</div>
 		);
-	}
-}
+	})
+);
+
+export default ContactForm;

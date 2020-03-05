@@ -21,6 +21,14 @@ class viewStore {
 
 	@observable
 	splashScreen = 2;
+
+	@observable
+	contactFormInit = {
+		fullname: "",
+		email: "",
+		company: "",
+		message: ""
+	};
 }
 
 export default new viewStore();

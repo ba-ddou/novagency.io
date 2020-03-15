@@ -12,14 +12,19 @@ import config from "app/config/config.js";
 
 class services {
 	constructor() {
+		// initialize the firebase sdk and firestore db object
 		firebase.initializeApp(config.firebaseConfig);
 		this.db = firebase.firestore();
 	}
 
+	// submit an inquiry to the inquiries collection
 	submitInquiry = async values => {
+		// TODO: modify dev build fallback
 		try {
+			// add a firebase server timesatamp to the inquiy's values object
 			values.timestamp = firebase.firestore.FieldValue.serverTimestamp();
-			console.log("Value :: \n", values);
+			// add a new document to the inquiries collection
+			// race() wrapps the request in a timeout
 			let { timeout, id, ...error } = await race(
 				this.db.collection("inquiries").add(values)
 			)
@@ -29,29 +34,34 @@ class services {
 				})
 				.catch(err => console.error(err));
 
+			// a successful request return the document id
 			if (id) {
-				console.log(id);
 				return ["inquiry successfully sent", false];
 			} else if (timeout) {
-				console.log("request timeout");
+				// is the request timesout, timout is set to true
 				return [false, "connection error"];
 			} else {
-				console.error(error);
+				// error handler
 				return [false, "unknown error, try agian later"];
 			}
 		} catch (error) {
-			console.log(error);
+			// dev build fallback
+			// in case firebase is not defined
+			// TODO: rewrite this fallback
 			await new Promise((resolve, reject) => setTimeout(resolve, 1000));
 			return ["mock inquiry was succefully sent", false];
 		}
 	};
 
+	// retreive projects data
 	getProjects = async () => {
+		// retreive project data from local storage
 		let projects = localStorage.getItem("projects");
+		// return local projects data if found in localstorage
 		if (projects) {
 			return JSON.parse(projects);
 		} else {
-			// await new Promise((resolve, reject) => setTimeout(resolve, 500));
+			// read projects data from firebase
 			try {
 				let projects = await this.db
 					.collection("projects")
@@ -62,12 +72,18 @@ class services {
 							arr.push(doc.data());
 						});
 						return arr;
+					})
+					.catch(err => {
+						return false;
 					});
-				localStorage.setItem("projects", JSON.stringify(projects));
-				console.log("projects data retreived from firebase");
-				return projects;
+				// save projects data to localstorage
+				if (projects)
+					localStorage.setItem("projects", JSON.stringify(projects));
+				return [];
 			} catch (error) {
-				console.error(error);
+				// dev build fallback
+				// in case firebase is not defined
+				// TODO: rewrite fallback
 				await new Promise((resolve, reject) =>
 					setTimeout(resolve, 200)
 				);

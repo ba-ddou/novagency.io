@@ -24,8 +24,8 @@ const FloatingMessage = ({ content }) => {
 				<i
 					className={
 						content.type == "success"
-							? "icon ion-ios-checkmark-circle-filled"
-							: "icon ion-ios-close-circle-filled"
+							? "icon ion-ios-checkmark-circle-outline"
+							: "icon ion-ios-close-circle-outline"
 					}></i>
 				{content.text}
 			</span>

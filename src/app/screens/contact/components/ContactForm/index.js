@@ -33,7 +33,7 @@ const ContactForm = inject(
 				};
 				setTimeout(() => {
 					props.viewStore.floatingMessageContent = false;
-				}, 3000);
+				}, 5000);
 				resetForm();
 			} else {
 				props.viewStore.splashScreen = "fade";
@@ -43,7 +43,7 @@ const ContactForm = inject(
 				};
 				setTimeout(() => {
 					props.viewStore.floatingMessageContent = false;
-				}, 3000);
+				}, 5000);
 			}
 			return true;
 		};

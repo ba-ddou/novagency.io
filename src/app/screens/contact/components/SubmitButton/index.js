@@ -32,7 +32,8 @@ const SubmitButton = inject("viewStore")(
 		return (
 			<button type="submit">
 				<SvgSpinningBtn
-					spin={send}
+					spinEn={send}
+					spinFr={send}
 					text={language == "en" ? "Send" : "Envoyer"}
 				/>
 			</button>

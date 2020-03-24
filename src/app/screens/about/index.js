@@ -36,7 +36,11 @@ const About = inject("viewStore")(
 					</div>
 					<div className="mainContent-cta">
 						<Link to="/projects">
-							<SvgSpinningBtn spin={viewpb} text="" />
+							<SvgSpinningBtn
+								spinEn={viewpb}
+								spinFr={viewpb}
+								text=""
+							/>
 						</Link>
 					</div>
 					<div className="mainContent-design">

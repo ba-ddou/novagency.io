@@ -23,11 +23,11 @@ const CarouselControls = ({ next, prev }) => {
 			{/* previous project button */}
 			<div className="carouselControls-left" onClick={prev}>
 				{/* This components render a spinning img from the images source passed to it */}
-				<SvgSpinningBtn spin={prevp} fix={preva} />
+				<SvgSpinningBtn spinEn={prevp} spinFr={prevp} fix={preva} />
 			</div>
 			{/* new project button */}
 			<div className="carouselControls-right" onClick={next}>
-				<SvgSpinningBtn spin={nextp} fix={nexta} />
+				<SvgSpinningBtn spinEn={nextp} spinFr={nextp} fix={nexta} />
 			</div>
 		</div>
 	);

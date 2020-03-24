@@ -3,17 +3,21 @@
 
 .projectSlide
     width: 60vw
-    height: 30vh
     cursor: pointer
     margin-bottom: 4.8rem
     padding: 1rem
     @include for-tablet-portrait-up 
         width: 45vw
-        height: 50vh
     @include for-big-desktop-up
         width: 35vw
-        height: 60vh
     .projectSlide-thumbnail
+        width: 100%
+        min-height: 60vw * .6
+        background-color: rgba(14,14,14,.2)
+        @include for-tablet-portrait-up 
+            min-height: 45vw * .6
+        @include for-big-desktop-up
+            min-height: 35vw * .6
         img
             width: 100%
             height: auto
@@ -51,3 +55,9 @@
             filter: blur(0)
         .projectSlide-info
             opacity: 1
+            width: 100%
+            min-height: 60vw * .2
+            @include for-tablet-portrait-up 
+                min-height: 45vw * .2
+            @include for-big-desktop-up
+                min-height: 35vw * .2

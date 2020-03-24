@@ -9,7 +9,7 @@ import {
 
 class modelStore {
 	@observable
-	projects = [];
+	projects = [{}, {}, {}];
 
 	@action getProject(name) {
 		let projects = toJS(this.projects);

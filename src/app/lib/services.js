@@ -77,7 +77,7 @@ class services {
 						return false;
 					});
 				// save projects data to localstorage
-				if (projects.length>0) {
+				if (projects.length > 0) {
 					localStorage.setItem("projects", JSON.stringify(projects));
 					return projects;
 				} else {

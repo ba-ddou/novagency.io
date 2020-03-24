@@ -16,13 +16,18 @@ import { LazyImage } from "react-lazy-images";
 
 const ProjectSlide = ({ data, language, key }) => {
 	return (
+		// a react router Link that wrappes the entire project slide
 		<Link to={`/projects/${data.name}`}>
 			<div key={data.name ? data.name : key} className="projectSlide">
 				<div className="projectSlide-thumbnail">
+					{/* lazy loaded project thumbnail */}
 					{data.thumbnail && (
 						<LazyImage
 							src={data.thumbnail.src}
 							alt={data.thumbnail.alt}
+							// placeholder image render prop
+							// all LazyImage props arr passed to 'placeholder' & 'actual'
+							// through props inside the imageProps object
 							placeholder={({ imageProps, ref }) => (
 								<img
 									ref={ref}
@@ -30,6 +35,7 @@ const ProjectSlide = ({ data, language, key }) => {
 									alt={imageProps.alt}
 								/>
 							)}
+							// actula image render prop
 							actual={({ imageProps }) => <img {...imageProps} />}
 						/>
 					)}

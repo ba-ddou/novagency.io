@@ -20,6 +20,7 @@ const ContactForm = inject(
 	"viewStore"
 )(
 	observer(props => {
+		let language = props.viewStore.language;
 		// for submit handler
 		let submit = async (values, { resetForm }) => {
 			props.viewStore.splashScreen = 1.2;
@@ -63,21 +64,38 @@ const ContactForm = inject(
 					}}
 					// Yup validation schema and error messages
 					validationSchema={Yup.object({
-						fullname: Yup.string().required("Required"),
+						fullname: Yup.string().required(
+							language == "en" ? "Required" : "Obligatoire"
+						),
 						email: Yup.string()
-							.email("Invalid email address")
-							.required("Required"),
+							.email(
+								language == "en"
+									? "Invalid email address"
+									: "Adresse non valide"
+							)
+							.required(
+								language == "en" ? "Required" : "Obligatoire"
+							),
 						company: Yup.string(),
 						message: Yup.string()
-							.min(50, "Must be 50 characters or more")
-							.required("Required")
+							.min(
+								50,
+								language == "en"
+									? "Must be 50 characters or more"
+									: "Doivent etre 50 characters ou plus"
+							)
+							.required(
+								language == "en" ? "Required" : "Obligatoire"
+							)
 					})}
 					onSubmit={submit}>
 					<Form>
 						<FormField
 							name="fullname"
 							type="text"
-							placeholder="fullname"
+							placeholder={
+								language == "en" ? "fullname" : "nom complet"
+							}
 						/>
 						<FormField
 							name="email"
@@ -88,12 +106,18 @@ const ContactForm = inject(
 						<FormField
 							name="company"
 							type="text"
-							placeholder="company"
+							placeholder={
+								language == "en" ? "company" : "entreprise"
+							}
 						/>
 						<FormField
 							name="message"
 							textarea={true} // this prop renders a textarea
-							placeholder="what can we do for you ?"
+							placeholder={
+								language == "en"
+									? "what can we do for you ?"
+									: "que pouvant nous faire pour vous ?"
+							}
 						/>
 						<SubmitButton />
 					</Form>

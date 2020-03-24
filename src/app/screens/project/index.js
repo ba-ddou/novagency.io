@@ -9,7 +9,7 @@ import React from "react";
 import { useParams, Redirect } from "react-router-dom";
 import { inject, observer } from "mobx-react";
 import { toJS } from "mobx";
-import './styles.sass';
+import "./styles.sass";
 import ProjectsNavBar from "./components/ProjectsNavBar";
 import ProjectControls from "./components/ProjectControls";
 import { SvgSpinningBtn } from "app/components/SpinningBtn";
@@ -19,6 +19,7 @@ import apple from "app/assets/images/apple.svg";
 import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet";
 import video from "app/assets/images/idyr_ad.mp4";
+import { LazyImage } from "react-lazy-images";
 
 const Project = inject(
 	"modelStore",
@@ -55,11 +56,28 @@ const Project = inject(
 							{project.content.map((content, index) => {
 								if (content.type == "image")
 									return (
-										<img
+										<LazyImage
 											key={index}
 											className="projectPage-images-image"
 											src={content.src}
 											alt={content.alt}
+											placeholder={({
+												imageProps,
+												ref
+											}) => (
+												<img
+													ref={ref}
+													key={imageProps.key}
+													src={content.placeholderSrc}
+													className={
+														imageProps.className
+													}
+													alt={imageProps.alt}
+												/>
+											)}
+											actual={({ imageProps }) => (
+												<img {...imageProps} />
+											)}
 										/>
 									);
 								else if (content.type == "video")
@@ -67,7 +85,7 @@ const Project = inject(
 										<video
 											key={index}
 											className="projectPage-images-image"
-											src={video}
+											src={content.src}
 											alt={content.alt}
 											controls={true}
 										/>

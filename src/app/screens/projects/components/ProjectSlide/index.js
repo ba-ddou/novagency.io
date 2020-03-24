@@ -22,11 +22,11 @@ const ProjectSlide = ({ data, language, key }) => {
 					{data.thumbnail && (
 						<LazyImage
 							src={data.thumbnail.src}
-							alt="projectThumbnail"
+							alt={data.thumbnail.alt}
 							placeholder={({ imageProps, ref }) => (
 								<img
 									ref={ref}
-									src="https://firebasestorage.googleapis.com/v0/b/nova-dev-00.appspot.com/o/Essential%20Stationery%20small.png?alt=media&token=2e4c471a-82e1-4a09-a364-9e4958e66c98"
+									src={data.thumbnail.placeholderSrc}
 									alt={imageProps.alt}
 								/>
 							)}

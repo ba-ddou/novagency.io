@@ -11,5 +11,9 @@ body
     min-height: stretch
     .mainContent-page
         flex: 1
+        @include for-big-desktop-up 
+            display: flex
+            flex-direction: column
+            justify-content: center
     .footer
         flex: 0

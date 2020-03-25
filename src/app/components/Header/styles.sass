@@ -11,11 +11,15 @@
         
         .banner-logotype
             @include font-settings(GothamBlack, 2rem)
+            @include for-huge-desktop-up 
+                @include font-settings(GothamBlack, 2.2rem)
         
         .banner-slogan
             @include font-settings(GeomanistBlack, 1.4rem)
             @include for-tablet-portrait-up 
                 @include font-settings(GeomanistBlack, 1.8rem)
+            @include for-huge-desktop-up 
+                @include font-settings(GeomanistBlack, 2rem)
             order: 3
             text-align: center
             width: 100%
@@ -37,9 +41,13 @@
         margin-top: 2.4rem
         @include for-tablet-portrait-up 
             margin-top: 1.2rem
+        @include for-huge-desktop-up
+            margin-top: 3.6rem
         .navbar-inner
             .navbar-navlink
                 @include font-settings(GeomanistBold, 1.2rem)
+                @include for-huge-desktop-up
+                    @include font-settings(GeomanistBold, 1.3rem)
                 @include colop(0.33)
                 margin-right: 2rem
             

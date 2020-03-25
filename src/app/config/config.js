@@ -8,7 +8,8 @@ export default {
 		messagingSenderId: "116004573342",
 		appId: "1:116004573342:web:b2b71e627806f9db1deb8f",
 		measurementId: "G-H68WL5FB8Z"
-	}
+	},
+	projectsDataVersion: 1
 	// firebaseConfig = {
 	// 	apiKey: "AIzaSyB8BJzbnbtz1yYhmzKhXyV68e76S5_Y20I",
 	// 	authDomain: "nova-prod-00.firebaseapp.com",

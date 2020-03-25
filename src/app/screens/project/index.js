@@ -8,17 +8,13 @@
 import React from "react";
 import { useParams, Redirect } from "react-router-dom";
 import { inject, observer } from "mobx-react";
-import { toJS } from "mobx";
 import "./styles.sass";
 import ProjectsNavBar from "./components/ProjectsNavBar";
 import ProjectControls from "./components/ProjectControls";
 import { SvgSpinningBtn } from "app/components/SpinningBtn";
 import devis from "app/assets/images/Devis-Button.svg";
-import img from "app/assets/images/xdesign.jpg";
-import apple from "app/assets/images/apple.svg";
 import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet";
-import video from "app/assets/images/idyr_ad.mp4";
 import { LazyImage } from "react-lazy-images";
 
 const Project = inject(

@@ -54,8 +54,7 @@ export default class ProjectsCarousel extends Component {
 						/>
 					))}
 				</Slider>
-				{/* this is div that contains the slider next and prev buttons
-                        it's absolutely positionned on top of the slider */}
+				{/* this is div that contains the slider next and prev buttons */}
 				<CarouselControls next={this.next} prev={this.prev} />
 			</div>
 		);

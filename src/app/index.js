@@ -25,7 +25,7 @@ export default class App extends Component {
 	componentDidMount() {
 		let run = async _ => {
 			let projects = await services.getProjects();
-			modelStore.projects = projects;
+			if (projects) modelStore.projects = projects;
 		};
 		run();
 	}

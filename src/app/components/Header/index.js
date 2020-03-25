@@ -20,7 +20,7 @@ const Header = props => {
 				</span>
 				<div className="banner-badge">
 					<Link to="/contact">
-						<SvgSpinningBtn spin={devis} text="" />
+						<SvgSpinningBtn spinEn={devis} spinFr={devis} text="" />
 					</Link>
 				</div>
 			</div>

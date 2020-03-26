@@ -77,9 +77,12 @@ class services {
 						return false;
 					});
 				// save projects data to localstorage
-				if (projects)
+				if (projects.length > 0) {
 					localStorage.setItem("projects", JSON.stringify(projects));
-				return [];
+					return projects;
+				} else {
+					return false;
+				}
 			} catch (error) {
 				// dev build fallback
 				// in case firebase is not defined

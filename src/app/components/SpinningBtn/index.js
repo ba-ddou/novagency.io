@@ -6,6 +6,7 @@
  */
 
 import React from "react";
+import { observer, inject } from "mobx-react";
 import "./styles.sass";
 import { motion, useAnimation } from "framer-motion";
 
@@ -28,14 +29,20 @@ const SpinWrapper = props => {
 // all SpinningBtns either need to receive a fix or a text prop
 // fix is an svg src, and text is a string
 // fix and text are the SpinningBtn's center static parts
-export const SvgSpinningBtn = ({ spin, fix, text }) => {
-	return (
-		<div className="svgSpinningBtn">
-			<SpinWrapper>
-				<img className="svgSpin" src={spin} />
-			</SpinWrapper>
-			{fix && <img src={fix} />}
-			{text && <span>{text}</span>}
-		</div>
-	);
-};
+export const SvgSpinningBtn = inject("viewStore")(
+	observer(({ spinEn, spinFr, fix, text, viewStore }) => {
+		let language = viewStore.language;
+		return (
+			<div className="svgSpinningBtn">
+				<SpinWrapper>
+					<img
+						className="svgSpin"
+						src={language == "en" ? spinEn : spinFr}
+					/>
+				</SpinWrapper>
+				{fix && <img src={fix} />}
+				{text && <span>{text}</span>}
+			</div>
+		);
+	})
+);

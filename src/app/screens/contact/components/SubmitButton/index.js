@@ -15,6 +15,7 @@ import { observer, inject } from "mobx-react";
 
 const SubmitButton = inject("viewStore")(
 	observer(props => {
+		let language = props.viewStore.language;
 		// retreive the parent Formik Forms context
 		let { isSubmitting, values } = useFormikContext();
 
@@ -30,7 +31,11 @@ const SubmitButton = inject("viewStore")(
 
 		return (
 			<button type="submit">
-				<SvgSpinningBtn spin={send} text={"SEND"} />
+				<SvgSpinningBtn
+					spinEn={send}
+					spinFr={send}
+					text={language == "en" ? "Send" : "Envoyer"}
+				/>
 			</button>
 		);
 	})

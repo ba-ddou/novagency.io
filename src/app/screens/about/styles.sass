@@ -6,7 +6,7 @@
     grid-template-columns: 1fr
     grid-template-rows: auto
     grid-template-areas: "description" "design" "code" "cta"
-    @include for-tablet-portrait-up 
+    @include for-tablet-portrait-up
         grid-template-areas: "description description" "design code" "cta cta"
         grid-template-columns: 1fr 1fr
         margin: 4.8rem 4.8rem
@@ -20,7 +20,7 @@
         @include for-tablet-portrait-up
             display: flex
             justify-content: center
-            // align-items: flex-start
+            align-items: flex-start
         @include for-big-desktop-up
                 display: initial
         .mainContent-title
@@ -34,6 +34,8 @@
                     margin-right: 0
             @include for-big-desktop-up
                 display: initial
+            @include for-huge-desktop-up
+                @include font-settings (GeomanistBlack, 4rem)
             span
                 margin-right: 0.5rem
                 line-height: 1
@@ -47,6 +49,8 @@
             @include for-big-desktop-up
                 width: 80%
                 margin-top: 1.2rem
+            @include for-huge-desktop-up
+                @include font-settings (GeomanistRegular, 1.4rem)
     .mainContent-cta
         grid-area: cta
         justify-self: center
@@ -67,10 +71,17 @@
             justify-self: end
         img
             width: 20rem
+            @include for-huge-desktop-up
+                width: 25rem
         p
             @include font-settings(GeomanistRegular, 1.2rem)
+            @include for-huge-desktop-up
+                @include font-settings(GeomanistRegular, 1.4rem)
             font-weight: bolder
+            text-align: center
             width: 20rem
+            @include for-huge-desktop-up
+                width: 25rem   
             margin-bottom: 4.8rem
             position: relative
             &:before
@@ -83,9 +94,13 @@
                 text-align: center
                 line-height: 0.5
                 @include font-settings(GeomanistBlack, 5rem)
+                @include for-huge-desktop-up
+                    @include font-settings(GeomanistBlack, 6rem)
                 @include colop(0.1)
             @include for-big-desktop-up 
                 margin-right: 7.2rem
+            @include for-huge-desktop-up
+                margin-right: 11.2rem
     .mainContent-code
         grid-area: code
         justify-self: center
@@ -102,12 +117,20 @@
             width: 18rem
             @include for-big-desktop-up 
                 margin-right: 7.2rem
+            @include for-huge-desktop-up
+                width: 23rem
+                margin-right: 11.2rem
         p
             @include font-settings(GeomanistRegular, 1.2rem)
             font-weight: bolder
+            text-align: center
             width: 20rem
+            @include for-huge-desktop-up
+                width: 25rem  
             margin-bottom: 4.8rem
             position: relative
+            @include for-huge-desktop-up
+                @include font-settings(GeomanistRegular, 1.4rem)
             &:before
                 content: "CODE"
                 position: absolute
@@ -116,6 +139,8 @@
                 right: 0
                 left: 0
                 text-align: center
-                line-height: 0.5
+                line-height: 0.6
                 @include font-settings(GeomanistBlack, 5rem)
                 @include colop(0.1)
+                @include for-huge-desktop-up
+                    @include font-settings(GeomanistBlack, 6rem)

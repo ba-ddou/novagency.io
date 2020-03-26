@@ -5,9 +5,13 @@
     .footer-social
         .footer-logotype
             @include font-settings(GothamBlack, 1.2rem)
+            @include for-huge-desktop-up
+                @include font-settings(GothamBlack, 1.3rem)
             line-height: 0
     .footer-languages
         @include font-settings(GeomanistRegular, 1.2rem)
+        @include for-huge-desktop-up
+            @include font-settings(GeomanistRegular, 1.3rem)
         @include colop(0.33)
         line-height: 0
         >span

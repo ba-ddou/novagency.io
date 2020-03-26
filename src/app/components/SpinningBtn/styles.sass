@@ -10,6 +10,10 @@
     width: 7.5rem
     height: 7.5rem
     border-radius: 7.5rem
+    @include for-huge-desktop-up
+        width: 8.5rem
+        height: 8.5rem
+        border-radius: 8.5rem
     cursor: pointer
     text-align: center
     backface-visibility: hidden
@@ -38,7 +42,7 @@
                 @include transform(scale(1.1))    
     &:active
         .svgSpin
-            @include transform(scale(.8))
+            @include transform(scale(.9))
     
 
 .spinWrapper

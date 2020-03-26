@@ -27,13 +27,19 @@
     input
         height: 3.2rem
 
+
     textarea
         height: 10.4rem
         resize: none
+        @include for-huge-desktop-up
+            height: 14.4rem
 
     .genericInputInfo 
         height: 2rem
         margin-top: .5rem
+        @include for-huge-desktop-up
+            height: 3rem
+        // margin-top: .5rem
 
 
 

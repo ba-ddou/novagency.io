@@ -57,13 +57,13 @@ class services {
 	getProjects = async () => {
 		// retreive project data from local storage
 		let projects = localStorage.getItem("projects");
-		// return local projects data if found in localstorage
-		if (projects) {
-			return JSON.parse(projects);
+		// check whether projects exist in localstorage & wether they're the right version
+		if (projects && projects.version == config.projectsDataVersion) {
+			return JSON.parse(projects.data); // return local projects data
 		} else {
 			// read projects data from firebase
 			try {
-				let projects = await this.db
+				let data = await this.db
 					.collection("projects")
 					.get()
 					.then(snapshot => {
@@ -77,9 +77,15 @@ class services {
 						return false;
 					});
 				// save projects data to localstorage
-				if (projects.length > 0) {
-					localStorage.setItem("projects", JSON.stringify(projects));
-					return projects;
+				if (data.length > 0) {
+					localStorage.setItem(
+						"projects",
+						JSON.stringify({
+							version: config.projectsDataVersion,
+							data
+						})
+					);
+					return data;
 				} else {
 					return false;
 				}

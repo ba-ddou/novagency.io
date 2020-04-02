@@ -107,7 +107,11 @@ const Project = inject(
 								<br></br>c'était votre projet ?
 							</div>
 							<Link to="/contact/">
-								<SvgSpinningBtn spin={devis} fix="" />
+								<SvgSpinningBtn
+									spinEn={devis}
+									spinFr={devis}
+									fix=""
+								/>
 							</Link>
 						</div>
 					</div>

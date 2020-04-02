@@ -31,9 +31,10 @@ const ProjectControls = inject("modelStore")(props => {
 			? projectsNames[0]
 			: projectsNames[currentProjectIndex + 1];
 
+	var scroll = ()=>window.scrollTo(0,0);
 	return (
 		<div className="projectControls">
-			<div className="projectControls-left">
+			<div className="projectControls-left"  onClick={scroll}>
 				<Link to={`/projects/${projectToLeft}`}>
 					<SvgSpinningBtn
 						spinEn={prevP}
@@ -42,7 +43,7 @@ const ProjectControls = inject("modelStore")(props => {
 					/>
 				</Link>
 			</div>
-			<div className="projectControls-right">
+			<div className="projectControls-right"  onClick={scroll}>
 				<Link to={`/projects/${projectToRight}`}>
 					<SvgSpinningBtn
 						spinEn={nextP}

@@ -5,7 +5,7 @@
  *
  */
 
-import React from "react";
+import React,{useEffect} from "react";
 import { useParams, Redirect } from "react-router-dom";
 import { inject, observer } from "mobx-react";
 import "./styles.sass";
@@ -22,6 +22,8 @@ const Project = inject(
 	"viewStore"
 )(
 	observer(({ modelStore, viewStore }) => {
+
+
 		// retreive the projectName url parameter from the React Router useParams hook
 		// this parameter is synamicaly supplied by the project slide's Link
 		let { projectName } = useParams();

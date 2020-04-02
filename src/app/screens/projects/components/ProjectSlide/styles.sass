@@ -26,6 +26,7 @@
     .projectSlide-info
         margin-top: 1.2rem
         color: $mateBlack
+        transition: 0.5s all ease
         >span
             display: block
         & :nth-child(1)
@@ -39,10 +40,12 @@
 
 .slick-slide   
     transform: scaleY(0.9)
-    transition: 0.5s all ease
+    transition: 0.4s all ease
     .projectSlide
         .projectSlide-thumbnail
-            filter: blur(0.25rem)
+            opacity: .7
+            filter: blur(0.2rem)
+            transition: 0.4s all ease
         .projectSlide-info
             opacity: 0
         
@@ -52,6 +55,7 @@
     //     background: none
     .projectSlide
         .projectSlide-thumbnail
+            opacity: 1
             filter: blur(0)
         .projectSlide-info
             opacity: 1

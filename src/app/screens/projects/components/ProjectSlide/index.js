@@ -20,22 +20,22 @@ const ProjectSlide = ({ data, language, key }) => {
 				<div className="projectSlide-thumbnail">
 					{/* lazy loaded project thumbnail */}
 					{data.thumbnail && (
-						<LazyImage
-							src={data.thumbnail.src}
-							alt={data.thumbnail.alt}
-							// placeholder image render prop
-							// all LazyImage props arr passed to 'placeholder' & 'actual'
-							// through props inside the imageProps object
-							placeholder={({ imageProps, ref }) => (
+						// <LazyImage
+						// 	src={data.thumbnail.src}
+						// 	alt={data.thumbnail.alt}
+						// 	// placeholder image render prop
+						// 	// all LazyImage props arr passed to 'placeholder' & 'actual'
+						// 	// through props inside the imageProps object
+						// 	placeholder={({ imageProps, ref }) => (
 								<img
-									ref={ref}
-									src={data.thumbnail.placeholderSrc}
-									alt={imageProps.alt}
+									// ref={ref}
+									src={data.thumbnail.src}
+									alt={data.thumbnail.alt}
 								/>
-							)}
-							// actula image render prop
-							actual={({ imageProps }) => <img {...imageProps} />}
-						/>
+						// 	)}
+						// 	// actula image render prop
+						// 	actual={({ imageProps }) => <img {...imageProps} />}
+						// />
 					)}
 				</div>
 				<div className="projectSlide-info">

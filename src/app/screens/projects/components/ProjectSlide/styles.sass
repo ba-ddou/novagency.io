@@ -20,6 +20,8 @@
         width: 100%
         min-height: 75vw * .6
         background-color: rgba(14,14,14,.2)
+        @include for-small-phone
+            min-height: 65vw * .6
         @include for-tablet-portrait-up 
             min-height: 45vw * .6
         @include for-big-desktop-up

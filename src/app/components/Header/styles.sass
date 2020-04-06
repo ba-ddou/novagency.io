@@ -15,7 +15,9 @@
                 @include font-settings(GothamBlack, 2.2rem)
         
         .banner-slogan
-            @include font-settings(GeomanistBlack, 1.4rem)
+            @include font-settings(GeomanistBlack, 1.6rem)
+            @include for-small-phone
+                @include font-settings(GeomanistBlack, 1.4rem)
             @include for-tablet-portrait-up 
                 @include font-settings(GeomanistBlack, 1.8rem)
             @include for-huge-desktop-up 
@@ -35,6 +37,9 @@
             // visibility: hidden
             @include for-tablet-portrait-up 
                 margin-bottom: 0
+            .svgSpinningBtn
+                >img
+                    width: 17.5% !important
     
     .navbar
         text-align: center
@@ -45,11 +50,13 @@
             margin-top: 3.6rem
         .navbar-inner
             .navbar-navlink
-                @include font-settings(GeomanistBold, 1.2rem)
-                @include for-huge-desktop-up
-                    @include font-settings(GeomanistBold, 1.3rem)
+                @include font-settings(GeomanistBold, 1.3rem)
+                @include for-small-phone
+                    @include font-settings(GeomanistBold, 1.2rem)
                 @include colop(0.33)
                 margin-right: 2rem
+                &:last-child
+                    margin-right: 0
             
             .navbar-navlink-selected
                 @include colop(1)

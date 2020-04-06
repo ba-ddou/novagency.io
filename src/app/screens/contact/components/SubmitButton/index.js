@@ -10,6 +10,7 @@ import React, { useEffect } from "react";
 import "./styles.sass";
 import { SvgSpinningBtn } from "app/components/SpinningBtn";
 import send from "app/assets/images/getBack.svg";
+import envoyer from "app/assets/images/bientot.svg";
 import { useField, useFormikContext } from "formik";
 import { observer, inject } from "mobx-react";
 
@@ -33,7 +34,7 @@ const SubmitButton = inject("viewStore")(
 			<button type="submit">
 				<SvgSpinningBtn
 					spinEn={send}
-					spinFr={send}
+					spinFr={envoyer}
 					text={language == "en" ? "Send" : "Envoyer"}
 				/>
 			</button>

@@ -15,6 +15,8 @@ import { Link } from "react-router-dom";
 import { SvgSpinningBtn } from "app/components/SpinningBtn";
 import nextP from "app/assets/images/nextProject.svg";
 import prevP from "app/assets/images/prevProject.svg";
+import nextPfr from "app/assets/images/projetSuivant.svg";
+import prevPfr from "app/assets/images/projetPrécedent.svg";
 
 const ProjectControls = inject("modelStore")(props => {
 	let projectsNames = props.modelStore.projectsNames;
@@ -38,7 +40,7 @@ const ProjectControls = inject("modelStore")(props => {
 				<Link to={`/projects/${projectToLeft}`}>
 					<SvgSpinningBtn
 						spinEn={prevP}
-						spinFr={prevP}
+						spinFr={prevPfr}
 						text={projectToLeft}
 					/>
 				</Link>
@@ -47,7 +49,7 @@ const ProjectControls = inject("modelStore")(props => {
 				<Link to={`/projects/${projectToRight}`}>
 					<SvgSpinningBtn
 						spinEn={nextP}
-						spinFr={nextP}
+						spinFr={nextPfr}
 						text={projectToRight}
 					/>
 				</Link>

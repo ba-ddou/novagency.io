@@ -10,6 +10,7 @@ import { inject, observer } from "mobx-react";
 import "./styles.sass";
 import { SvgSpinningBtn } from "app/components/SpinningBtn";
 import viewpb from "app/assets/images/viewpb.svg";
+import voirpb from "app/assets/images/voirProjets.svg";
 import designill from "app/assets/images/Design Illustration.svg";
 import codeill from "app/assets/images/Code Illustration.svg";
 import { Helmet } from "react-helmet";
@@ -38,7 +39,7 @@ const About = inject("viewStore")(
 						<Link to="/projects">
 							<SvgSpinningBtn
 								spinEn={viewpb}
-								spinFr={viewpb}
+								spinFr={voirpb}
 								text=""
 							/>
 						</Link>

@@ -14,8 +14,10 @@ import { ArrowSpinningBtn, SvgSpinningBtn } from "app/components/SpinningBtn";
 // all SVGs should be imported this way
 import preva from "app/assets/images/leftArrow.svg";
 import prevp from "app/assets/images/prevProject.svg";
+import prevpfr from "app/assets/images/projetPrécedent.svg";
 import nexta from "app/assets/images/rightArrow.svg";
 import nextp from "app/assets/images/nextProject.svg";
+import nextpfr from "app/assets/images/projetSuivant.svg";
 
 const CarouselControls = ({ next, prev }) => {
 	return (
@@ -23,11 +25,11 @@ const CarouselControls = ({ next, prev }) => {
 			{/* previous project button */}
 			<div className="carouselControls-left" onClick={prev}>
 				{/* This components render a spinning img from the images source passed to it */}
-				<SvgSpinningBtn spinEn={prevp} spinFr={prevp} fix={preva} />
+				<SvgSpinningBtn spinEn={prevp} spinFr={prevpfr} fix={preva} />
 			</div>
 			{/* new project button */}
 			<div className="carouselControls-right" onClick={next}>
-				<SvgSpinningBtn spinEn={nextp} spinFr={nextp} fix={nexta} />
+				<SvgSpinningBtn spinEn={nextp} spinFr={nextpfr} fix={nexta} />
 			</div>
 		</div>
 	);

@@ -2,18 +2,26 @@
 
 
 .projectSlide
-    width: 60vw
+    width: 75vw
+    height: 15vh
     cursor: pointer
     margin-bottom: 4.8rem
-    padding: 1rem
+    padding: 0.64rem
+    @include for-small-phone
+        width: 65vw
+        height: 35vh
     @include for-tablet-portrait-up 
         width: 45vw
+        height: 35vh
     @include for-big-desktop-up
         width: 35vw
+        height: 65vh
     .projectSlide-thumbnail
         width: 100%
-        min-height: 60vw * .6
+        min-height: 75vw * .6
         background-color: rgba(14,14,14,.2)
+        @include for-small-phone
+            min-height: 65vw * .6
         @include for-tablet-portrait-up 
             min-height: 45vw * .6
         @include for-big-desktop-up
@@ -31,12 +39,19 @@
             display: block
         & :nth-child(1)
             @include font-settings (GeomanistBold, 1.4rem)
+            @include for-small-phone
+                @include font-settings (GeomanistBold, 1.2rem)
             text-transform: uppercase
         & :nth-child(2)
             @include font-settings (GeomanistBold, 1.4rem)
             margin-bottom: 1.2rem
+            @include for-small-phone
+                @include font-settings (GeomanistBold, 1.2rem)
+                margin-bottom: 0.6rem
         & :nth-child(3)
             @include font-settings (GeomanistRegular, 1.2rem)
+            @include for-small-phone
+                @include font-settings (GeomanistRegular, 1rem)
 
 .slick-slide   
     transform: scaleY(0.9)

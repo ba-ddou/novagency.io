@@ -10,6 +10,10 @@
     width: 7.5rem
     height: 7.5rem
     border-radius: 7.5rem
+    @include for-small-phone
+        width: 6rem
+        height: 6rem
+        border-radius: 6rem
     @include for-huge-desktop-up
         width: 8.5rem
         height: 8.5rem
@@ -33,7 +37,9 @@
         top: 50%
         left: 50%
         @include transform(translate(-50%, -50%))
-        @include font-settings (GeomanistBold, 1.3rem)
+        @include font-settings (GeomanistBold, 1.25rem)
+        @include for-small-phone
+            @include font-settings (GeomanistBold, 1rem)
         text-transform: uppercase
         color: $mateBlack
     @include for-desktop-up 
@@ -56,9 +62,6 @@
         display: block
         width: 100%
         height: auto
-        transition: 0.5s all ease
-    
-        
-        
-    
-    
+        line-height: 100%
+        transition: 0.25s all ease
+

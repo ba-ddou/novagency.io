@@ -7,7 +7,9 @@ import React from "react";
 import "./styles.sass";
 import { NavLink, Link, useRouteMatch } from "react-router-dom";
 import { SvgSpinningBtn } from "app/components/SpinningBtn";
-import devis from "app/assets/images/Devis-Button.svg";
+import devis from "app/assets/images/Devis.svg";
+import quote from "app/assets/images/Quote.svg";
+import icon from "app/assets/images/smallIcon.svg";
 
 const Header = props => {
 	let path = window.location.pathname;
@@ -20,7 +22,7 @@ const Header = props => {
 				</span>
 				<div className="banner-badge">
 					<Link to="/contact">
-						<SvgSpinningBtn spinEn={devis} spinFr={devis} text="" />
+						<SvgSpinningBtn spinEn={quote} spinFr={devis} fix={icon} />
 					</Link>
 				</div>
 			</div>

@@ -12,7 +12,9 @@ import "./styles.sass";
 import ProjectsNavBar from "./components/ProjectsNavBar";
 import ProjectControls from "./components/ProjectControls";
 import { SvgSpinningBtn } from "app/components/SpinningBtn";
-import devis from "app/assets/images/Devis-Button.svg";
+import devis from "app/assets/images/Devis.svg";
+import quote from "app/assets/images/Quote.svg";
+import icon from "app/assets/images/smallIcon.svg";
 import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet";
 import { LazyImage } from "react-lazy-images";
@@ -110,9 +112,7 @@ const Project = inject(
 							</div>
 							<Link to="/contact/">
 								<SvgSpinningBtn
-									spinEn={devis}
-									spinFr={devis}
-									fix=""
+									spinEn={quote} spinFr={devis} fix={icon}
 								/>
 							</Link>
 						</div>

@@ -22,10 +22,10 @@ import { Helmet } from "react-helmet";
 const Projects = inject("modelStore")(({ modelStore }) => {
 	// get the current Route's path
 	let { path } = useRouteMatch();
-	useEffect(() => {
-		document.getElementsByClassName('slick-slide')[0].focus();
-		console.log('focused');
-	},[])
+	// useEffect(() => {
+	// 	document.getElementsByClassName('slick-slide')[0].focus();
+	// 	console.log('focused');
+	// },[])
 	return (
 		<div id="projectsPage" className="mainContent-page">
 			{/* all page specific HTML meta data goes inside Helmet*/}

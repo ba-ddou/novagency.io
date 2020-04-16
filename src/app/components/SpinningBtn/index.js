@@ -16,7 +16,7 @@ const SpinWrapper = props => {
 			className="spinWrapper"
 			animate={{ rotate: 360 }}
 			transition={{
-				duration: 7,
+				duration: 14,
 				ease: "linear",
 				loop: Infinity
 			}}>

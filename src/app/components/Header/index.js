@@ -10,9 +10,11 @@ import { SvgSpinningBtn } from "app/components/SpinningBtn";
 import devis from "app/assets/images/Devis.svg";
 import quote from "app/assets/images/Quote.svg";
 import icon from "app/assets/images/smallIcon.svg";
+import { inject } from "mobx-react";
 
-const Header = props => {
+const Header = inject("viewStore")(({ viewStore }) => {
 	let path = window.location.pathname;
+	let language = viewStore.language;
 	return (
 		<div className="header">
 			<div className="banner">
@@ -22,7 +24,11 @@ const Header = props => {
 				</span>
 				<div className="banner-badge">
 					<Link to="/contact">
-						<SvgSpinningBtn spinEn={quote} spinFr={devis} fix={icon} />
+						<SvgSpinningBtn
+							spinEn={quote}
+							spinFr={devis}
+							fix={icon}
+						/>
 					</Link>
 				</div>
 			</div>
@@ -34,24 +40,24 @@ const Header = props => {
 						to="/"
 						className="navbar-navlink"
 						activeClassName="navbar-navlink-selected">
-						ABOUT
+						{language == "en" ? "ABOUT" : "A PROPOS"}
 					</NavLink>
 					<NavLink
 						to="/projects"
 						className="navbar-navlink"
 						activeClassName="navbar-navlink-selected">
-						PROJECTS
+						{language == "en" ? "PROJECTS" : "PROJETS"}
 					</NavLink>
 					<NavLink
 						to="/contact"
 						className="navbar-navlink"
 						activeClassName="navbar-navlink-selected">
-						CONTACT
+						{language == "en" ? "CONTACT" : "CONTACT"}
 					</NavLink>
 				</div>
 			</div>
 		</div>
 	);
-};
+});
 
 export default Header;

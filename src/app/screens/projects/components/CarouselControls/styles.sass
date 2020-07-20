@@ -2,11 +2,21 @@
 .carouselControls
     display: flex
     justify-content: space-between
+    @include for-tablet-height
+        margin-bottom: 4.8rem
     .carouselControls-left,.carouselControls-right
     .carouselControls-left
         margin-left: 5rem
         @include for-small-phone
             margin-left: 2.5rem
+        @include for-tablet-height
+            position: relative
+            bottom: 6rem
+            margin-bottom: -5rem
+        @include for-tablet-height-up
+            position: relative
+            bottom: 6rem
+            margin-bottom: -5rem
         @include for-big-desktop-up
             position: relative
             bottom: 11rem
@@ -20,6 +30,14 @@
         margin-right: 5rem
         @include for-small-phone
             margin-right: 2.5rem
+        @include for-tablet-height
+            position: relative
+            bottom: 6rem
+            margin-bottom: -5rem
+        @include for-tablet-height-up
+            position: relative
+            bottom: 6rem
+            margin-bottom: -5rem
         @include for-big-desktop-up
             position: relative
             bottom: 11rem

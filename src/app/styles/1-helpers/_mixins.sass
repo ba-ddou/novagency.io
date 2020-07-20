@@ -30,3 +30,11 @@
 @mixin for-huge-desktop-up 
     @media (min-width: 1400px) 
         @content
+
+@mixin for-tablet-height
+    @media (min-width: 450px) and (min-height: 150px)
+        @content
+
+@mixin for-tablet-height-up
+    @media (min-width: 450px) and (min-height: 500px)
+        @content

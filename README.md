@@ -1,11 +1,3 @@
-## Setup
-
-```
-> git clone https://github.com/ba-ddou/novagency.io_sample.git
-> cd novagency.io_sample
-> yarn install
-```
-
 ## Available Scripts
 
 In the project directory, you can run:
